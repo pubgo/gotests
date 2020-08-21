@@ -5,7 +5,7 @@ import (
 	"github.com/fsnotify/fsnotify"
 	"github.com/gen2brain/beeep"
 	"github.com/gen2brain/dlgs"
-	"github.com/pubgo/g/xerror"
+	"github.com/pubgo/xerror"
 	"os"
 	"path/filepath"
 	"testing"

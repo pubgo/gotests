@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"github.com/gen2brain/dlgs"
 	"github.com/go-vgo/robotgo"
-	"github.com/pubgo/g/xerror"
+	"github.com/pubgo/xerror"
 	hook "github.com/robotn/gohook"
 	"time"
 )

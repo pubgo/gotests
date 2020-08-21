@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	"github.com/go-vgo/robotgo"
-	"github.com/pubgo/g/pkg/shutil"
+	"github.com/pubgo/x/pkg/shutil"
 	hook "github.com/robotn/gohook"
 	"time"
 )

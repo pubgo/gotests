@@ -5,7 +5,7 @@ import (
 	"github.com/antonmedv/expr"
 	"github.com/antonmedv/expr/vm"
 	_ "github.com/mattn/go-sqlite3"
-	"github.com/pubgo/g/xerror"
+	"github.com/pubgo/xerror"
 	"regexp"
 	"strings"
 	"testing"

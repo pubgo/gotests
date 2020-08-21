@@ -3,8 +3,8 @@ package tests
 import (
 	"fmt"
 	"github.com/denisbrodbeck/machineid"
-	"github.com/pubgo/g/pkg/encoding/baseutil"
-	"github.com/pubgo/g/xerror"
+	"github.com/pubgo/x/pkg/encoding/baseutil"
+	"github.com/pubgo/xerror"
 	"github.com/rs/xid"
 	"log"
 	"testing"

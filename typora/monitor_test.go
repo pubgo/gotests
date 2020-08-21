@@ -3,9 +3,9 @@ package tests
 import (
 	"fmt"
 	"github.com/fsnotify/fsnotify"
-	"github.com/pubgo/g/models"
-	"github.com/pubgo/g/pkg/fileutil"
-	"github.com/pubgo/g/xerror"
+	"github.com/pubgo/x/models"
+	"github.com/pubgo/x/pkg/fileutil"
+	"github.com/pubgo/xerror"
 	"gopkg.in/yaml.v2"
 	"io/ioutil"
 	"log"

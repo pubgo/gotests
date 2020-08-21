@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"github.com/JesusIslam/tldr"
 	"github.com/go-ego/gse"
-	"github.com/pubgo/g/xerror"
+	"github.com/pubgo/xerror"
 	"github.com/yanyiwu/gojieba"
 	"strings"
 	"testing"

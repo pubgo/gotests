@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"github.com/go-vgo/robotgo"
 	"github.com/go-vgo/robotgo/clipboard"
-	"github.com/pubgo/g/xerror"
+	"github.com/pubgo/xerror"
 	hook "github.com/robotn/gohook"
 	"log"
 	"testing"

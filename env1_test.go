@@ -2,7 +2,7 @@ package tests
 
 import (
 	"fmt"
-	"github.com/pubgo/g/xerror"
+	"github.com/pubgo/xerror"
 	"regexp"
 	"runtime/debug"
 	"testing"
