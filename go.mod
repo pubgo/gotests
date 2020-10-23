@@ -24,6 +24,7 @@ require (
 	github.com/golang/protobuf v1.4.2
 	github.com/gopherjs/gopherjs v0.0.0-20200217142428-fce0ec30dd00
 	github.com/hajimehoshi/oto v0.6.3
+	github.com/lxn/walk v0.0.0-20191113135339-bf589de20b3c
 	github.com/mattn/go-sqlite3 v1.14.0
 	github.com/pubgo/g v0.2.52
 	github.com/pubgo/x v0.2.56
@@ -32,7 +33,9 @@ require (
 	github.com/rocketlaunchr/react v1.0.9
 	github.com/rs/xid v1.2.1
 	github.com/sciter-sdk/go-sciter v0.5.0
+	github.com/skratchdot/open-golang v0.0.0-20160302144031-75fb7ed4208c
 	github.com/vcaesar/imgo v0.10.0
+	github.com/webview/webview v0.0.0-20200724072439-e0c01595b361
 	github.com/yanyiwu/gojieba v1.1.2
 	gocv.io/x/gocv v0.24.0
 	golang.org/x/crypto v0.0.0-20200820211705-5c72a883971a

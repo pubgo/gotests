@@ -734,6 +734,7 @@ github.com/silenceper/wechat v2.0.1+incompatible/go.mod h1:JKAk3URsmQk11QCP/n3xq
 github.com/siongui/godom v0.0.0-20181006133514-8ba1cdb25192/go.mod h1:HlsL4IlMbIFM7fVEzc61bwE3Or1cNJzKZMDkO2xO9gA=
 github.com/sirupsen/logrus v1.2.0/go.mod h1:LxeOpSwHxABJmUn/MG1IvRgCAasNZTLOkJPxbbu5VWo=
 github.com/sirupsen/logrus v1.4.2/go.mod h1:tLMulIdttU9McNUspp0xgXVQah82FyeX6MwdIuYE2rE=
+github.com/skratchdot/open-golang v0.0.0-20160302144031-75fb7ed4208c h1:fyKiXKO1/I/B6Y2U8T7WdQGWzwehOuGIrljPtt7YTTI=
 github.com/skratchdot/open-golang v0.0.0-20160302144031-75fb7ed4208c/go.mod h1:sUM3LWHvSMaG192sy56D9F7CNvL7jUJVXoqM1QKLnog=
 github.com/smartystreets/assertions v0.0.0-20180927180507-b2de0cb4f26d/go.mod h1:OnSkiWE9lh6wB0YB77sQom3nweQdgAjqCqsofrRNTgc=
 github.com/smartystreets/assertions v1.1.0/go.mod h1:tcbTF8ujkAEcZ8TElKY+i30BzYlVhC/LOxJk7iOWnoo=
@@ -829,6 +830,8 @@ github.com/vinta/pangu v3.0.0+incompatible/go.mod h1:8n5gJh5l7U0Rbz6mjRK/09AiL0B
 github.com/vmihailenco/msgpack/v4 v4.2.0/go.mod h1:Mu3B7ZwLd5nNOLVOKt9DecVl7IVg0xkDiEjk6CwMrww=
 github.com/vmihailenco/tagparser v0.1.0/go.mod h1:OeAg3pn3UbLjkWt+rN9oFYB6u/cQgqMEUPoW2WPyhdI=
 github.com/vultr/govultr v0.1.4/go.mod h1:9H008Uxr/C4vFNGLqKx232C206GL0PBHzOP0809bGNA=
+github.com/webview/webview v0.0.0-20200724072439-e0c01595b361 h1:e0+/fQY5l9NdCwPsEg9S8AgE5lFhZ/6UX+b2KkpIBFg=
+github.com/webview/webview v0.0.0-20200724072439-e0c01595b361/go.mod h1:rpXAuuHgyEJb6kXcXldlkOjU6y4x+YcASKKXJNUhh0Y=
 github.com/willf/bitset v1.1.10/go.mod h1:RjeCKbqT1RxIR/KWY6phxZiaY1IyutSBfGjNPySAYV4=
 github.com/xanzy/ssh-agent v0.2.1/go.mod h1:mLlQY/MoOhWBj+gOGMQkOeiEvkx+8pJSI+0Bx9h2kr4=
 github.com/xdg/scram v0.0.0-20180814205039-7eeb5667e42c/go.mod h1:lB8K/P019DLNhemzwFU4jHLhdvlE6uDZjXFejJXr49I=

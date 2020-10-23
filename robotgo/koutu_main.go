@@ -35,7 +35,7 @@ func main1() {
 			l := len(arr)
 			if l > 0 {
 				for i := 0; i < l; i++ {
-					ukey := uint16(robotgo.Keycode[arr[i]].(int))
+					ukey := uint16(robotgo.Keycode[arr[i]])
 
 					if e.Kind == hook.KeyHold && e.Keycode == ukey {
 						k++
@@ -57,7 +57,7 @@ func main1() {
 				ct = true
 			}
 
-			if ct && e.Kind == hook.KeyUp && e.Keycode == uint16(robotgo.Keycode[key].(int)) {
+			if ct && e.Kind == hook.KeyUp && e.Keycode == uint16(robotgo.Keycode[key]) {
 				s1 = true
 				break
 			}
@@ -267,11 +267,11 @@ func main() {
 			bbm.Bytewidth = tbm.Bytewidth
 
 			_name := fmt.Sprintf("%d.png", time.Now().Unix())
-			robotgo.SaveBitmap(_bm, _name, )
+			robotgo.SaveBitmap(_bm, _name)
 			//robotgo.SaveCapture(_name, ok[0], ok[1], ok[2]-ok[0], ok[3]-ok[1])
 			//bbm.ImgBuf = robotgo.SaveBitmap(_bm, _name)
 
-			x1, y1 := robotgo.FindBitmap(robotgo.OpenBitmap(_name, ))
+			x1, y1 := robotgo.FindBitmap(robotgo.OpenBitmap(_name))
 			//x1, y1 := robotgo.FindPic(_name)
 			//x1, y1 := robotgo.FindBitmap(_bm)
 			fmt.Println(x1/2, y1/2, x1, y1)
