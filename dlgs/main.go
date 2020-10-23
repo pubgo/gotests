@@ -20,7 +20,7 @@ func main() {
 	}
 	fmt.Println(passwd)
 
-	yes, err := dlgs.Question("Question", "Are you sure you want to format this media?", true)
+	yes, err := dlgs.Question("Question", "https://dev.to/t/go \n Are you sure you want to format this media?", true)
 	if err != nil {
 		panic(err)
 	}

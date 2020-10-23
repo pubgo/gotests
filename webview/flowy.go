@@ -7,7 +7,7 @@ import (
 
 
 
-func main() {
+func main1() {
 	var indexHTML = `
 <!DOCTYPE html>
 <html>
