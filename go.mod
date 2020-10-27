@@ -5,6 +5,7 @@ go 1.14
 require (
 	fyne.io/fyne v1.3.3
 	gitee.com/glib/webview v0.1.2
+	github.com/10cella/yomo-json-codec v0.2.6
 	github.com/AllenDang/gimu v0.0.0-20200217071344-b824d3f8d7e6
 	github.com/JesusIslam/tldr v0.6.0
 	github.com/antonmedv/expr v1.8.8
@@ -24,8 +25,11 @@ require (
 	github.com/golang/protobuf v1.4.2
 	github.com/gopherjs/gopherjs v0.0.0-20200217142428-fce0ec30dd00
 	github.com/hajimehoshi/oto v0.6.3
+	github.com/hashicorp/memberlist v0.1.0
+	github.com/lucas-clemente/quic-go v0.17.1
 	github.com/lxn/walk v0.0.0-20191113135339-bf589de20b3c
 	github.com/mattn/go-sqlite3 v1.14.0
+	github.com/pborman/uuid v1.2.0
 	github.com/pubgo/g v0.2.52
 	github.com/pubgo/x v0.2.56
 	github.com/pubgo/xerror v0.2.8
@@ -37,6 +41,7 @@ require (
 	github.com/vcaesar/imgo v0.10.0
 	github.com/webview/webview v0.0.0-20200724072439-e0c01595b361
 	github.com/yanyiwu/gojieba v1.1.2
+	github.com/yomorun/yomo v0.1.14
 	gocv.io/x/gocv v0.24.0
 	golang.org/x/crypto v0.0.0-20200820211705-5c72a883971a
 	golang.org/x/image v0.0.0-20200801110659-972c09e46d76
