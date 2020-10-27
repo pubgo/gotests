@@ -24,6 +24,8 @@ require (
 	github.com/golang/freetype v0.0.0-20170609003504-e2365dfdc4a0
 	github.com/golang/protobuf v1.4.2
 	github.com/gopherjs/gopherjs v0.0.0-20200217142428-fce0ec30dd00
+	github.com/grpc-ecosystem/go-grpc-middleware v1.0.0
+	github.com/grpc-ecosystem/go-grpc-prometheus v1.2.0
 	github.com/hajimehoshi/oto v0.6.3
 	github.com/hashicorp/memberlist v0.1.0
 	github.com/lucas-clemente/quic-go v0.17.1
@@ -45,6 +47,7 @@ require (
 	gocv.io/x/gocv v0.24.0
 	golang.org/x/crypto v0.0.0-20200820211705-5c72a883971a
 	golang.org/x/image v0.0.0-20200801110659-972c09e46d76
+	google.golang.org/grpc v1.23.1
 	gopkg.in/yaml.v2 v2.3.0
 	xorm.io/xorm v1.0.3
 )
