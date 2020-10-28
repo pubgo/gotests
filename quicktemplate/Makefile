@@ -2,7 +2,7 @@
 GOPATH:=$(shell go env GOPATH)
 
 .PHONY: proto
-proto: clear
+proto:
 	protoc -I. \
    -I/usr/local/include \
    -I${GOPATH}/src \
@@ -13,7 +13,6 @@ proto: clear
    --go_out=. \
    --grpc-gateway_out=. \
    --nrpc_out=. \
-   --hello_out=. \
    proto/*
 
 clear:

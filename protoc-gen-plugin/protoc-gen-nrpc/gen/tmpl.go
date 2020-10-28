@@ -552,6 +552,7 @@ type Client struct {
 	{{.GetName}} *{{.GetName}}Client
 	{{- end}}
 }
+
 func NewClient(nc nrpc.NatsConn
 	{{- range $pkgSubjectParams -}}
 	, pkgParam{{.}} string

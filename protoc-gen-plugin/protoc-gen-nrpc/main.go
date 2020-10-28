@@ -15,9 +15,7 @@ import (
 
 	"github.com/nats-rpc/nrpc"
 
-	options "google.golang.org/genproto/googleapis/api/annotations"
 	"google.golang.org/protobuf/proto"
-	"google.golang.org/protobuf/types/descriptorpb"
 	descriptor "google.golang.org/protobuf/types/descriptorpb"
 	plugin "google.golang.org/protobuf/types/pluginpb"
 )
@@ -406,6 +404,7 @@ func main() {
 	//fmt.Println(string(data))
 
 	var response plugin.CodeGeneratorResponse
+
 	if err := proto.Unmarshal(data, &request); err != nil {
 		log.Fatalf("error: parsing input proto: %v", err)
 	}
@@ -449,8 +448,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-	//f, err := os.OpenFile("test.txt", os.O_RDWR|os.O_TRUNC, 0755)
-	//xerror.Exit(err)
 	for _, name := range request.GetFileToGenerate() {
 		var fd *descriptor.FileDescriptorProto
 		for _, fd = range request.GetProtoFile() {
@@ -497,38 +494,4 @@ func main() {
 	if _, err := os.Stdout.Write(data); err != nil {
 		log.Fatalf("error: failed to write output proto: %v", err)
 	}
-}
-
-func extractAPIOptions(meth *descriptorpb.MethodDescriptorProto) (*options.HttpRule, error) {
-	if meth.Options == nil {
-		return nil, nil
-	}
-	if !proto.HasExtension(meth.Options, options.E_Http) {
-		return nil, nil
-	}
-	ext := proto.GetExtension(meth.Options, options.E_Http)
-	opts, ok := ext.(*options.HttpRule)
-	if !ok {
-		return nil, fmt.Errorf("extension is %T; want an HttpRule", ext)
-	}
-	return opts, nil
-}
-
-func defaultAPIOptions(svc *Service, md *descriptorpb.MethodDescriptorProto) (*options.HttpRule, error) {
-	// FQSN prefixes the service's full name with a '.', e.g.: '.example.ExampleService'
-	fqsn := strings.TrimPrefix(svc.FQSN(), ".")
-
-	// This generates an HttpRule that matches the gRPC mapping to HTTP/2 described in
-	// https://github.com/grpc/grpc/blob/master/doc/PROTOCOL-HTTP2.md#requests
-	// i.e.:
-	//   * method is POST
-	//   * path is "/<service name>/<method name>"
-	//   * body should contain the serialized request message
-	rule := &options.HttpRule{
-		Pattern: &options.HttpRule_Post{
-			Post: fmt.Sprintf("/%s/%s", fqsn, md.GetName()),
-		},
-		Body: "*",
-	}
-	return rule, nil
 }
