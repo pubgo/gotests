@@ -1,34 +1,25 @@
+package helloworld
 
+import rpc1 "net/rpc"
 
-type Proto/api.protoInterface interface {
-		Version(in *.helloworld.TestReq, out *.helloworld.TestApiOutput) error
-		VersionTest(in *.helloworld.TestReq, out *.helloworld.TestApiOutput) error
+// test
+/* ssss */
+type TestApi interface {
+	Version(in *TestReq, out *TestApiOutput) error
+	VersionTest(in *TestReq, out *TestApiOutput) error
 }
 
-func RegisterProto/api.proto(srv *rpc.Server, x Proto/api.protoInterface) error {
-	if err := srv.RegisterName("Proto/api.proto", x); err != nil {
-		return err
-	}
+func RegisterTestApi(srv *rpc1.Server, x TestApi) error {
 	return nil
 }
 
-type Proto/api.protoClient struct {
-	*rpc.Client
-}
-var _ Proto/api.protoInterface = (*Proto/api.protoClient)(nil)
-func DialProto/api.proto(network, address string) (*Proto/api.protoClient, error) {
-	c, err := rpc.Dial(network, address)
-	if err != nil {
-		return nil, err
-	}
-	return &Proto/api.protoClient{Client: c}, nil
+// test
+/* ssss */
+type TestApiV2 interface {
+	Version(in *TestReq, out *TestApiOutput) error
+	VersionTest(in *TestReq, out *TestApiOutput) error
 }
 
-func (p *Proto/api.protoClient) Version(in *.helloworld.TestReq, out *.helloworld.TestApiOutput) error {
-	return p.Client.Call("Proto/api.proto.Version", in, out)
+func RegisterTestApiV2(srv *rpc1.Server, x TestApiV2) error {
+	return nil
 }
-
-func (p *Proto/api.protoClient) VersionTest(in *.helloworld.TestReq, out *.helloworld.TestApiOutput) error {
-	return p.Client.Call("Proto/api.proto.VersionTest", in, out)
-}
-

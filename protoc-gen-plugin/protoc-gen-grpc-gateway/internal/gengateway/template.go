@@ -19,7 +19,7 @@ type param struct {
 	UseRequestContext  bool
 	RegisterFuncSuffix string
 	AllowPatchFeature  bool
-	OmitPackageDoc     bool
+	  OmitPackageDoc     bool
 }
 
 type binding struct {

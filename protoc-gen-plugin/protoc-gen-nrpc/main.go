@@ -224,9 +224,7 @@ func pkgSubject(fd *descriptor.FileDescriptorProto) string {
 	return fd.GetPackage()
 }
 
-func getResultType(
-	md *descriptor.MethodDescriptorProto,
-) string {
+func getResultType(md *descriptor.MethodDescriptorProto, ) string {
 	return md.GetOutputType()
 }
 
