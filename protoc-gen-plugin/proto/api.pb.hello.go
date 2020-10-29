@@ -1,6 +1,6 @@
 package helloworld
 
-import rpc1 "net/rpc"
+import rpc "net/rpc"
 
 // test
 /* ssss */
@@ -9,7 +9,7 @@ type TestApi interface {
 	VersionTest(in *TestReq, out *TestApiOutput) error
 }
 
-func RegisterTestApi(srv *rpc1.Server, x TestApi) error {
+func RegisterTestApi(srv *rpc.Server, x TestApi) error {
 	return nil
 }
 
@@ -20,6 +20,6 @@ type TestApiV2 interface {
 	VersionTest(in *TestReq, out *TestApiOutput) error
 }
 
-func RegisterTestApiV2(srv *rpc1.Server, x TestApiV2) error {
+func RegisterTestApiV2(srv *rpc.Server, x TestApiV2) error {
 	return nil
 }

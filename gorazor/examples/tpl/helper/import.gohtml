@@ -1,21 +1,11 @@
 @{
-	import (
-		"github.com/pubgo/gotests/gorazor/examples/models"
-	)
-	var u *models.User
+	var isImport bool
 }
 
-
-@{
-	username := u.Name
-	if u.Email != "" {
-		username += "(" + u.Email + ")"
+import (
+	@if isImport {
+		@raw(`_ "github.com/pubgo/gotests/gorazor/examples/models"`)
+		@raw(`prometheus.MustRegister(@isImport)`)
+		<title>@title</title>
 	}
-}
-
-
-<div class="welcome">
-<h4>Hello @username</h4>
-
-<div>@raw(u.Intro)</div>
-</div>
+)

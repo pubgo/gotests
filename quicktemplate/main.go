@@ -1,1 +1,6 @@
-package quicktemplate
+package main
+
+func main() {
+
+}
+

@@ -1,7 +1,7 @@
 
 clear:
-	rm -rf tpl/*.go
-	rm -rf tpl/**/*.go
+	rm -rf examples/tpl/*.go
+	rm -rf examples/tpl/**/*.go
 
 gen:
-	gorazor -prefix github.com/pubgo/gotests/protoc-gen-plugin/examples ./tpl ./tpl
+	gorazor -prefix github.com/pubgo/gotests/gorazor ./examples/tpl ./examples/tpl
