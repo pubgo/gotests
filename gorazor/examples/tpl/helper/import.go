@@ -5,6 +5,7 @@
 package helper
 
 import (
+	"fmt"
 	"github.com/sipin/gorazor/gorazor"
 	"io"
 	"strings"
@@ -19,25 +20,46 @@ func Import(isImport bool) string {
 
 // RenderImport render examples/tpl/helper/import.gohtml
 func RenderImport(_buffer io.StringWriter, isImport bool) {
-	// Line: 3
+	// Line: 7
 	_buffer.WriteString("\n\nimport (\n\t")
 	if isImport {
 
-		// Line: 7
+		// Line: 11
 		_buffer.WriteString((`_ "github.com/pubgo/gotests/gorazor/examples/models"`))
 
-		// Line: 8
-		_buffer.WriteString((`prometheus.MustRegister(isImport)`))
-
-		// Line: 9
-		_buffer.WriteString("<title>")
-		// Line: 9
-		_buffer.WriteString(gorazor.HTMLEscape(title))
-		// Line: 9
-		_buffer.WriteString("</title>")
+		// Line: 12
+		_buffer.WriteString(gorazor.HTMLEscStr(fmt.Sprintf("prometheus.MustRegister(%v)", isImport)))
 
 	}
-	// Line: 10
-	_buffer.WriteString("\n)")
+	// Line: 13
+	_buffer.WriteString("\n\ttitle\n\tprometheus.MustRegister(")
+	// Line: 15
+	_buffer.WriteString(gorazor.HTMLEscape(isImport))
+	// Line: 15
+	_buffer.WriteString(")\n)\n\nprometheus.MustRegister()")
+	for i := 0; i < 2; i++ {
+		if i > 0 {
+			if i == 1 {
+
+				// Line: 23
+				_buffer.WriteString(gorazor.HTMLEscStr(fmt.Sprintf("%d has 1 message", i)))
+
+			} else {
+
+				// Line: 25
+				_buffer.WriteString(gorazor.HTMLEscStr(fmt.Sprintf("%d has %s messages", i, gorazor.Itoa(i))))
+
+			}
+		} else {
+
+			// Line: 28
+			_buffer.WriteString(gorazor.HTMLEscStr(fmt.Sprintf("%d has no messages", i)))
+
+		}
+
+		// Line: 30
+		_buffer.WriteString(gorazor.HTMLEscStr(fmt.Sprintf("hello")))
+
+	}
 
 }

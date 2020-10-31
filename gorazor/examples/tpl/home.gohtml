@@ -1,29 +1,33 @@
 @{
-	import (
-		"github.com/pubgo/gotests/gorazor/examples/models"
-		"github.com/pubgo/gotests/gorazor/examples/tpl/helper"
-		"github.com/pubgo/gotests/gorazor/examples/tpl/layout"
-	)
-	layout := layout.Base
-	var totalMessage int
-	var u *models.User
+import (
+"fmt"
+"github.com/pubgo/gotests/gorazor/examples/models"
+"github.com/pubgo/gotests/gorazor/examples/tpl/helper"
+"github.com/pubgo/gotests/gorazor/examples/tpl/layout"
+)
+layout := layout.Base
+var totalMessage int
+var u *models.User
 }
 
 @helper.Header()
 @helper.Msg(u)
 @helper.Import(u.IsImport)
 
+
 @section title {
-	<title>@u.Name's homepage</title>
+<title>@u.Name's homepage</title>
 }
 
+@fmt.Sprintln("hello")
+
 @section side {
-	switch totalMessage {
-	case 0:
-	      <p>@u.Name has no message</p>
-	case 1:
-	      <p>@u.Name has 1 messages</p>
-	default:
-	      <p>@u.Name has @totalMessage messages</p>
-	}
+switch totalMessage {
+case 0:
+<p>@u.Name has no message</p>
+case 1:
+<p>@u.Name has 1 messages</p>
+default:
+<p>@u.Name has @totalMessage messages</p>
+}
 }

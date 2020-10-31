@@ -5,6 +5,7 @@
 package tpl
 
 import (
+	"fmt"
 	"github.com/pubgo/gotests/gorazor/examples/models"
 	"github.com/pubgo/gotests/gorazor/examples/tpl/helper"
 	"github.com/pubgo/gotests/gorazor/examples/tpl/layout"
@@ -24,57 +25,59 @@ func Home(totalMessage int, u *models.User) string {
 func RenderHome(_buffer io.StringWriter, totalMessage int, u *models.User) {
 
 	_body := func(_buffer io.StringWriter) {
-		// Line: 12
-		_buffer.WriteString((helper.Header()))
 		// Line: 13
-		_buffer.WriteString((helper.Msg(u)))
+		_buffer.WriteString((helper.Header()))
 		// Line: 14
+		_buffer.WriteString((helper.Msg(u)))
+		// Line: 15
 		_buffer.WriteString((helper.Import(u.IsImport)))
 
 	}
 
 	_title := func(_buffer io.StringWriter) {
 
-		// Line: 17
+		// Line: 19
 		_buffer.WriteString("<title>")
-		// Line: 17
+		// Line: 19
 		_buffer.WriteString(gorazor.HTMLEscStr(u.Name))
-		// Line: 17
+		// Line: 19
 		_buffer.WriteString("'s homepage</title>")
 
 	}
+	// Line: 22
+	_buffer.WriteString(gorazor.HTMLEscStr(fmt.Sprintln("hello")))
 
 	_side := func(_buffer io.StringWriter) {
 		switch totalMessage {
 		case 0:
 
-			// Line: 23
+			// Line: 27
 			_buffer.WriteString("<p>")
-			// Line: 23
+			// Line: 27
 			_buffer.WriteString(gorazor.HTMLEscStr(u.Name))
-			// Line: 23
+			// Line: 27
 			_buffer.WriteString(" has no message</p>")
 
 		case 1:
 
-			// Line: 25
+			// Line: 29
 			_buffer.WriteString("<p>")
-			// Line: 25
+			// Line: 29
 			_buffer.WriteString(gorazor.HTMLEscStr(u.Name))
-			// Line: 25
+			// Line: 29
 			_buffer.WriteString(" has 1 messages</p>")
 
 		default:
 
-			// Line: 27
+			// Line: 31
 			_buffer.WriteString("<p>")
-			// Line: 27
+			// Line: 31
 			_buffer.WriteString(gorazor.HTMLEscStr(u.Name))
-			// Line: 27
+			// Line: 31
 			_buffer.WriteString(" has ")
-			// Line: 27
+			// Line: 31
 			_buffer.WriteString(gorazor.HTMLEscInt(totalMessage))
-			// Line: 27
+			// Line: 31
 			_buffer.WriteString(" messages</p>")
 
 		}

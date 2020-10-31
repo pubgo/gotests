@@ -1,11 +1,31 @@
 @{
+	import (
+		"fmt"
+	)
+
 	var isImport bool
 }
 
 import (
 	@if isImport {
 		@raw(`_ "github.com/pubgo/gotests/gorazor/examples/models"`)
-		@raw(`prometheus.MustRegister(@isImport)`)
-		<title>@title</title>
+		@fmt.Sprintf("prometheus.MustRegister(%v)",isImport)
 	}
+	title
+	prometheus.MustRegister(@isImport)
 )
+
+prometheus.MustRegister()
+
+@for i := 0; i < 2; i++ {
+	if i > 0 {
+		if i == 1 {
+			@fmt.Sprintf("%d has 1 message",i)
+		} else {
+			@fmt.Sprintf("%d has %s messages",i,@gorazor.Itoa(i))
+		}
+	} else {
+		@fmt.Sprintf("%d has no messages",i)
+	}
+	@fmt.Sprintf("hello")
+}
