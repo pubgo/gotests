@@ -24,13 +24,13 @@ var (
 func StreamGreetings(qw422016 *qt422016.Writer, names []string) {
 //line templates/greetings.qtpl:3
 	qw422016.N().S(`
-`)
+    `)
 //line templates/greetings.qtpl:4
 	if len(names) == 0 {
 //line templates/greetings.qtpl:4
 		qw422016.N().S(`
-Nobody to greet :(
-`)
+        Nobody to greet :(
+        `)
 //line templates/greetings.qtpl:6
 		return
 //line templates/greetings.qtpl:7
@@ -38,47 +38,47 @@ Nobody to greet :(
 //line templates/greetings.qtpl:7
 	qw422016.N().S(`
 
-`)
+    `)
 //line templates/greetings.qtpl:9
 	for i, name := range names {
 //line templates/greetings.qtpl:9
 		qw422016.N().S(`
-`)
+        `)
 //line templates/greetings.qtpl:10
 		if i == 42 {
 //line templates/greetings.qtpl:10
 			qw422016.N().S(`
-I'm tired to greet so many people...
-`)
+            I'm tired to greet so many people...
+            `)
 //line templates/greetings.qtpl:12
 			break
 //line templates/greetings.qtpl:13
 		} else if name == "John" {
 //line templates/greetings.qtpl:13
 			qw422016.N().S(`
-`)
+            `)
 //line templates/greetings.qtpl:14
 			streamsayHi(qw422016, "Mr. "+name)
 //line templates/greetings.qtpl:14
 			qw422016.N().S(`
-`)
+            `)
 //line templates/greetings.qtpl:15
 			continue
 //line templates/greetings.qtpl:16
 		} else {
 //line templates/greetings.qtpl:16
 			qw422016.N().S(`
-`)
+            `)
 //line templates/greetings.qtpl:17
 			StreamHello(qw422016, name)
 //line templates/greetings.qtpl:17
 			qw422016.N().S(`
-`)
+        `)
 //line templates/greetings.qtpl:18
 		}
 //line templates/greetings.qtpl:18
 		qw422016.N().S(`
-`)
+    `)
 //line templates/greetings.qtpl:19
 	}
 //line templates/greetings.qtpl:19
@@ -119,7 +119,7 @@ func Greetings(names []string) string {
 func streamsayHi(qw422016 *qt422016.Writer, name string) {
 //line templates/greetings.qtpl:23
 	qw422016.N().S(`
-Hi, `)
+    Hi, `)
 //line templates/greetings.qtpl:24
 	qw422016.E().S(name)
 //line templates/greetings.qtpl:24
@@ -158,9 +158,8 @@ func sayHi(name string) string {
 // of template functions. For instance, this file contains Greetings and sayHi
 // functions.
 //
-//
 
-//line templates/greetings.qtpl:33
+//line templates/greetings.qtpl:32
 type MarshalRow struct {
 	Msg string
 	N   int
@@ -174,124 +173,124 @@ type MarshalData struct {
 
 // JSON marshaling
 
-//line templates/greetings.qtpl:47
+//line templates/greetings.qtpl:46
 func (d *MarshalData) StreamJSON(qw422016 *qt422016.Writer) {
-//line templates/greetings.qtpl:47
+//line templates/greetings.qtpl:46
 	qw422016.N().S(`{"Foo":`)
-//line templates/greetings.qtpl:49
+//line templates/greetings.qtpl:48
 	qw422016.N().D(d.Foo)
-//line templates/greetings.qtpl:49
+//line templates/greetings.qtpl:48
 	qw422016.N().S(`,"Bar":`)
-//line templates/greetings.qtpl:50
+//line templates/greetings.qtpl:49
 	qw422016.N().Q(d.Bar)
-//line templates/greetings.qtpl:50
+//line templates/greetings.qtpl:49
 	qw422016.N().S(`,"Rows":[`)
-//line templates/greetings.qtpl:52
+//line templates/greetings.qtpl:51
 	for i, r := range d.Rows {
-//line templates/greetings.qtpl:52
+//line templates/greetings.qtpl:51
 		qw422016.N().S(`{"Msg":`)
-//line templates/greetings.qtpl:54
+//line templates/greetings.qtpl:53
 		qw422016.N().Q(r.Msg)
-//line templates/greetings.qtpl:54
+//line templates/greetings.qtpl:53
 		qw422016.N().S(`,"N":`)
-//line templates/greetings.qtpl:55
+//line templates/greetings.qtpl:54
 		qw422016.N().D(r.N)
-//line templates/greetings.qtpl:55
+//line templates/greetings.qtpl:54
 		qw422016.N().S(`}`)
-//line templates/greetings.qtpl:57
+//line templates/greetings.qtpl:56
 		if i+1 < len(d.Rows) {
-//line templates/greetings.qtpl:57
+//line templates/greetings.qtpl:56
 			qw422016.N().S(`,`)
-//line templates/greetings.qtpl:57
+//line templates/greetings.qtpl:56
 		}
-//line templates/greetings.qtpl:58
+//line templates/greetings.qtpl:57
 	}
-//line templates/greetings.qtpl:58
+//line templates/greetings.qtpl:57
 	qw422016.N().S(`]}`)
-//line templates/greetings.qtpl:61
+//line templates/greetings.qtpl:60
 }
 
-//line templates/greetings.qtpl:61
+//line templates/greetings.qtpl:60
 func (d *MarshalData) WriteJSON(qq422016 qtio422016.Writer) {
-//line templates/greetings.qtpl:61
+//line templates/greetings.qtpl:60
 	qw422016 := qt422016.AcquireWriter(qq422016)
-//line templates/greetings.qtpl:61
+//line templates/greetings.qtpl:60
 	d.StreamJSON(qw422016)
-//line templates/greetings.qtpl:61
+//line templates/greetings.qtpl:60
 	qt422016.ReleaseWriter(qw422016)
-//line templates/greetings.qtpl:61
+//line templates/greetings.qtpl:60
 }
 
-//line templates/greetings.qtpl:61
+//line templates/greetings.qtpl:60
 func (d *MarshalData) JSON() string {
-//line templates/greetings.qtpl:61
+//line templates/greetings.qtpl:60
 	qb422016 := qt422016.AcquireByteBuffer()
-//line templates/greetings.qtpl:61
+//line templates/greetings.qtpl:60
 	d.WriteJSON(qb422016)
-//line templates/greetings.qtpl:61
+//line templates/greetings.qtpl:60
 	qs422016 := string(qb422016.B)
-//line templates/greetings.qtpl:61
+//line templates/greetings.qtpl:60
 	qt422016.ReleaseByteBuffer(qb422016)
-//line templates/greetings.qtpl:61
+//line templates/greetings.qtpl:60
 	return qs422016
-//line templates/greetings.qtpl:61
+//line templates/greetings.qtpl:60
 }
 
 // XML marshalling
 
-//line templates/greetings.qtpl:66
+//line templates/greetings.qtpl:65
 func (d *MarshalData) StreamXML(qw422016 *qt422016.Writer) {
-//line templates/greetings.qtpl:66
+//line templates/greetings.qtpl:65
 	qw422016.N().S(`<MarshalData><Foo>`)
-//line templates/greetings.qtpl:68
+//line templates/greetings.qtpl:67
 	qw422016.N().D(d.Foo)
-//line templates/greetings.qtpl:68
+//line templates/greetings.qtpl:67
 	qw422016.N().S(`</Foo><Bar>`)
-//line templates/greetings.qtpl:69
+//line templates/greetings.qtpl:68
 	qw422016.E().S(d.Bar)
-//line templates/greetings.qtpl:69
+//line templates/greetings.qtpl:68
 	qw422016.N().S(`</Bar><Rows>`)
-//line templates/greetings.qtpl:71
+//line templates/greetings.qtpl:70
 	for _, r := range d.Rows {
-//line templates/greetings.qtpl:71
+//line templates/greetings.qtpl:70
 		qw422016.N().S(`<Row><Msg>`)
-//line templates/greetings.qtpl:73
+//line templates/greetings.qtpl:72
 		qw422016.E().S(r.Msg)
-//line templates/greetings.qtpl:73
+//line templates/greetings.qtpl:72
 		qw422016.N().S(`</Msg><N>`)
-//line templates/greetings.qtpl:74
+//line templates/greetings.qtpl:73
 		qw422016.N().D(r.N)
-//line templates/greetings.qtpl:74
+//line templates/greetings.qtpl:73
 		qw422016.N().S(`</N></Row>`)
-//line templates/greetings.qtpl:76
+//line templates/greetings.qtpl:75
 	}
-//line templates/greetings.qtpl:76
+//line templates/greetings.qtpl:75
 	qw422016.N().S(`</Rows></MarshalData>`)
-//line templates/greetings.qtpl:79
+//line templates/greetings.qtpl:78
 }
 
-//line templates/greetings.qtpl:79
+//line templates/greetings.qtpl:78
 func (d *MarshalData) WriteXML(qq422016 qtio422016.Writer) {
-//line templates/greetings.qtpl:79
+//line templates/greetings.qtpl:78
 	qw422016 := qt422016.AcquireWriter(qq422016)
-//line templates/greetings.qtpl:79
+//line templates/greetings.qtpl:78
 	d.StreamXML(qw422016)
-//line templates/greetings.qtpl:79
+//line templates/greetings.qtpl:78
 	qt422016.ReleaseWriter(qw422016)
-//line templates/greetings.qtpl:79
+//line templates/greetings.qtpl:78
 }
 
-//line templates/greetings.qtpl:79
+//line templates/greetings.qtpl:78
 func (d *MarshalData) XML() string {
-//line templates/greetings.qtpl:79
+//line templates/greetings.qtpl:78
 	qb422016 := qt422016.AcquireByteBuffer()
-//line templates/greetings.qtpl:79
+//line templates/greetings.qtpl:78
 	d.WriteXML(qb422016)
-//line templates/greetings.qtpl:79
+//line templates/greetings.qtpl:78
 	qs422016 := string(qb422016.B)
-//line templates/greetings.qtpl:79
+//line templates/greetings.qtpl:78
 	qt422016.ReleaseByteBuffer(qb422016)
-//line templates/greetings.qtpl:79
+//line templates/greetings.qtpl:78
 	return qs422016
-//line templates/greetings.qtpl:79
+//line templates/greetings.qtpl:78
 }

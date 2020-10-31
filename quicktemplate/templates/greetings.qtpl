@@ -1,44 +1,43 @@
 Greetings greets up to 42 names.
 It also greets John differently comparing to others.
 {% func Greetings(names []string) %}
-{% if len(names) == 0 %}
-Nobody to greet :(
-{% return %}
-{% endif %}
+    {% if len(names) == 0 %}
+        Nobody to greet :(
+        {% return %}
+    {% endif %}
 
-{% for i, name := range names %}
-{% if i == 42 %}
-I'm tired to greet so many people...
-{% break %}
-{% elseif name == "John" %}
-{%= sayHi("Mr. " + name) %}
-{% continue %}
-{% else %}
-{%= Hello(name) %}
-{% endif %}
-{% endfor %}
+    {% for i, name := range names %}
+        {% if i == 42 %}
+            I'm tired to greet so many people...
+            {% break %}
+        {% elseif name == "John" %}
+            {%= sayHi("Mr. " + name) %}
+            {% continue %}
+        {% else %}
+            {%= Hello(name) %}
+        {% endif %}
+    {% endfor %}
 {% endfunc %}
 
 sayHi is unexported, since it starts with lowercase letter.
 {% func sayHi(name string) %}
-Hi, {%s name %}
+    Hi, {%s name %}
 {% endfunc %}
 
 Note that every template file may contain an arbitrary number
 of template functions. For instance, this file contains Greetings and sayHi
 functions.
 
-
 {% code
 type MarshalRow struct {
-Msg string
-N int
+    Msg string
+    N int
 }
 
 type MarshalData struct {
-Foo int
-Bar string
-Rows []MarshalRow
+    Foo int
+    Bar string
+    Rows []MarshalRow
 }
 %}
 
@@ -46,17 +45,17 @@ Rows []MarshalRow
 {% stripspace %}
 {% func (d *MarshalData) JSON() %}
 {
-"Foo": {%d d.Foo %},
-"Bar": {%q= d.Bar %},
-"Rows":[
-{% for i, r := range d.Rows %}
-{
-"Msg": {%q= r.Msg %},
-"N": {%d r.N %}
-}
-{% if i + 1 < len(d.Rows) %},{% endif %}
-{% endfor %}
-]
+    "Foo": {%d d.Foo %},
+    "Bar": {%q= d.Bar %},
+    "Rows":[
+        {% for i, r := range d.Rows %}
+           {
+                "Msg": {%q= r.Msg %},
+                "N": {%d r.N %}
+           }
+            {% if i + 1 < len(d.Rows) %},{% endif %}
+       {% endfor %}
+    ]
 }
 {% endfunc %}
 {% endstripspace %}

@@ -24,13 +24,13 @@ var (
 func StreamGreetings(qw422016 *qt422016.Writer, names []string) {
 //line templates/greetings1.qtpl:3
 	qw422016.N().S(`
-`)
+    `)
 //line templates/greetings1.qtpl:4
 	if len(names) == 0 {
 //line templates/greetings1.qtpl:4
 		qw422016.N().S(`
-Nobody to greet :(
-`)
+        Nobody to greet :(
+        `)
 //line templates/greetings1.qtpl:6
 		return
 //line templates/greetings1.qtpl:7
@@ -38,47 +38,47 @@ Nobody to greet :(
 //line templates/greetings1.qtpl:7
 	qw422016.N().S(`
 
-`)
+    `)
 //line templates/greetings1.qtpl:9
 	for i, name := range names {
 //line templates/greetings1.qtpl:9
 		qw422016.N().S(`
-`)
+        `)
 //line templates/greetings1.qtpl:10
 		if i == 42 {
 //line templates/greetings1.qtpl:10
 			qw422016.N().S(`
-I'm tired to greet so many people...
-`)
+            I'm tired to greet so many people...
+            `)
 //line templates/greetings1.qtpl:12
 			break
 //line templates/greetings1.qtpl:13
 		} else if name == "John" {
 //line templates/greetings1.qtpl:13
 			qw422016.N().S(`
-`)
+            `)
 //line templates/greetings1.qtpl:14
 			streamsayHi(qw422016, "Mr. "+name)
 //line templates/greetings1.qtpl:14
 			qw422016.N().S(`
-`)
+            `)
 //line templates/greetings1.qtpl:15
 			continue
 //line templates/greetings1.qtpl:16
 		} else {
 //line templates/greetings1.qtpl:16
 			qw422016.N().S(`
-`)
+            `)
 //line templates/greetings1.qtpl:17
 			StreamHello(qw422016, name)
 //line templates/greetings1.qtpl:17
 			qw422016.N().S(`
-`)
+        `)
 //line templates/greetings1.qtpl:18
 		}
 //line templates/greetings1.qtpl:18
 		qw422016.N().S(`
-`)
+    `)
 //line templates/greetings1.qtpl:19
 	}
 //line templates/greetings1.qtpl:19
