@@ -42,7 +42,7 @@ require (
 	github.com/lucas-clemente/quic-go v0.17.1
 	github.com/lxn/walk v0.0.0-20191113135339-bf589de20b3c
 	github.com/mattn/go-sqlite3 v1.14.0
-	github.com/nats-io/nats.go v1.10.0
+	github.com/nats-io/nats.go v1.10.0 // indirect
 	github.com/nats-rpc/nrpc v0.0.0-20201006200202-510bc58f2c5d
 	github.com/opentracing/opentracing-go v1.2.0 // indirect
 	github.com/pborman/uuid v1.2.0
@@ -57,6 +57,7 @@ require (
 	github.com/sirupsen/logrus v1.4.2
 	github.com/skratchdot/open-golang v0.0.0-20160302144031-75fb7ed4208c
 	github.com/stretchr/testify v1.6.1
+	github.com/valyala/fasttemplate v1.0.1
 	github.com/valyala/quicktemplate v1.1.1
 	github.com/vcaesar/imgo v0.10.0
 	github.com/webview/webview v0.0.0-20200724072439-e0c01595b361

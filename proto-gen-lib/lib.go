@@ -1,6 +1,7 @@
 package proto_gen_lib
 
 import (
+	"github.com/valyala/fasttemplate"
 	"io/ioutil"
 	logger "log"
 	"os"
@@ -59,6 +60,16 @@ func (t *Service) TypeName(mthName string) string {
 	return getTypeName(t.pkg, mthName)
 }
 
+func (t *Service) GetMethod() (methods []*Method) {
+	for _, mth := range t.ServiceDescriptorProto.GetMethod() {
+		methods = append(methods, &Method{
+			ss:                    t,
+			MethodDescriptorProto: mth,
+		})
+	}
+	return methods
+}
+
 func (t *protoGen) FileDescriptor(fn func(ss *Service)) error {
 	for _, name := range t.request.GetFileToGenerate() {
 		var fd *descriptor.FileDescriptorProto
@@ -77,6 +88,7 @@ func (t *protoGen) FileDescriptor(fn func(ss *Service)) error {
 
 		for _, ss := range fd.GetService() {
 			fn(&Service{J: j, ServiceDescriptorProto: ss, pkg: pkg, Name: CamelCase(ss.GetName())})
+			break
 		}
 
 		if ext := path.Ext(name); ext == ".proto" {
@@ -521,4 +533,27 @@ var isGoKeyword = map[string]bool{
 	"switch":      true,
 	"type":        true,
 	"var":         true,
+}
+
+type Method struct {
+	ss *Service
+	*descriptor.MethodDescriptorProto
+}
+
+func (t *Method) GetName() string {
+	return CamelCase(t.ss.TypeName(t.MethodDescriptorProto.GetName()))
+}
+
+func (t *Method) GetInputType() string {
+	return t.ss.TypeName(t.MethodDescriptorProto.GetInputType())
+}
+
+func (t *Method) GetOutputType() string {
+	return t.ss.TypeName(t.MethodDescriptorProto.GetOutputType())
+}
+
+type M map[string]interface{}
+
+func Template(template string, m M) string {
+	return fasttemplate.ExecuteString(template, "${", "}", m)
 }
