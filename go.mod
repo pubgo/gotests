@@ -27,17 +27,17 @@ require (
 	github.com/go-ego/gse v0.50.3
 	github.com/go-gl/glfw/v3.3/glfw v0.0.0-20200707082815-5321531c36a2
 	github.com/go-vgo/robotgo v0.90.2
-	github.com/gogo/protobuf v1.2.1
+	github.com/gogo/protobuf v1.3.1
 	github.com/golang/freetype v0.0.0-20170609003504-e2365dfdc4a0
 	github.com/golang/glog v0.0.0-20160126235308-23def4e6c14b
 	github.com/golang/protobuf v1.4.3
 	github.com/google/go-cmp v0.5.2
 	github.com/gopherjs/gopherjs v0.0.0-20200217142428-fce0ec30dd00
-	github.com/grpc-ecosystem/go-grpc-middleware v1.0.0
+	github.com/grpc-ecosystem/go-grpc-middleware v1.1.0
 	github.com/grpc-ecosystem/go-grpc-prometheus v1.2.0
 	github.com/grpc-ecosystem/grpc-gateway/v2 v2.0.1
 	github.com/hajimehoshi/oto v0.6.3
-	github.com/hashicorp/memberlist v0.1.0
+	github.com/hashicorp/memberlist v0.1.3
 	github.com/iancoleman/orderedmap v0.1.0
 	github.com/lucas-clemente/quic-go v0.17.1
 	github.com/lxn/walk v0.0.0-20191113135339-bf589de20b3c
@@ -48,7 +48,8 @@ require (
 	github.com/pborman/uuid v1.2.0
 	github.com/pubgo/g v0.2.52
 	github.com/pubgo/x v0.2.56
-	github.com/pubgo/xerror v0.2.8
+	github.com/pubgo/xerror v0.2.12
+	github.com/pubgo/xprotogen v0.0.2
 	github.com/robotn/gohook v0.30.3
 	github.com/rocketlaunchr/react v1.0.9
 	github.com/rs/xid v1.2.1
@@ -57,8 +58,8 @@ require (
 	github.com/sirupsen/logrus v1.4.2
 	github.com/skratchdot/open-golang v0.0.0-20160302144031-75fb7ed4208c
 	github.com/stretchr/testify v1.6.1
-	github.com/valyala/fasttemplate v1.0.1
-	github.com/valyala/quicktemplate v1.1.1
+	github.com/valyala/fasttemplate v1.2.1
+	github.com/valyala/quicktemplate v1.6.3
 	github.com/vcaesar/imgo v0.10.0
 	github.com/webview/webview v0.0.0-20200724072439-e0c01595b361
 	github.com/xeipuuv/gojsonschema v1.2.0
