@@ -60,9 +60,9 @@ func TestName(t *testing.T) {
 
 	var fs descpb.FileDescriptorProto
 	xerror.Exit(proto.Unmarshal(dt, &fs))
-	fmt.Println(fs.Name)
-	fmt.Println(fs.Options)
-	fmt.Println(fs.Service)
+	fmt.Println(fs.GetName())
+	fmt.Println(fs.GetOptions())
+	fmt.Println(fs.GetService())
 	fmt.Println(fs.String())
 	dt, err = json.MarshalIndent(fs, "", "  ")
 	xerror.Exit(err)

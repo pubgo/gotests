@@ -6,7 +6,6 @@ import (
 	proto_gen_lib "github.com/pubgo/gotests/proto-gen-lib"
 	"github.com/pubgo/xerror"
 	"log"
-	"strings"
 )
 
 const (
@@ -39,7 +38,7 @@ func clientMethod(srv string, m *proto_gen_lib.Method) *jen.Statement {
 }
 
 func serviceClient(srv string, m *proto_gen_lib.Method, j *jen.File) {
-	var srv1 = strings.ToLower(srv[:1]) + srv[1:]
+	//var srv1 = strings.ToLower(srv[:1]) + srv[1:]
 	var srvS = srv + "Service"
 
 	mp := proto_gen_lib.M{

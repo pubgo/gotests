@@ -9,7 +9,7 @@ proto: clear gen
    -I${GOPATH}/src/github.com/googleapis/googleapis \
    -I${GOPATH}/src/github.com/pubgo/catdog/example/hello/proto \
    --proto_path=${GOPATH}/src:. \
-   --go_out=. \
+   --go_out=plugins=grpc:. \
    --hello_out=. \
    proto/*
 
