@@ -18,6 +18,7 @@ require (
 	github.com/faiface/gui v0.0.0-20190522095505-ed00d80d15da
 	github.com/faiface/mainthread v0.0.0-20171120011319-8b78f0a41ae3
 	github.com/faiface/pixel v0.9.0
+	github.com/flosch/pongo2 v0.0.0-20190707114632-bbf5a6c351f4
 	github.com/fogleman/gg v1.3.0
 	github.com/fsnotify/fsnotify v1.4.9
 	github.com/gen2brain/beeep v0.0.0-20200526185328-e9c15c258e28
