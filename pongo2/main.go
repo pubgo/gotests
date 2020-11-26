@@ -31,6 +31,20 @@ func main() {
 	{{ user_details(true) }}
 	{{name}}
     <h1>Our members</h1>
+
+	{% if true %}
+	{% set new_var = a() %}
+	{% else %}
+	{% set new_var1 = a() %}
+	{% endif %}
+	{{new_var}}
+	{{new_var}}
+	{{- new_var1}}
+	{{- new_var2}}
+	{{- new_var2}}
+	{{- new_var2}}
+	{{- new_var2}}
+	{{- new_var2}}
   </body>
 </html>
 `)
@@ -38,10 +52,9 @@ func main() {
 		panic(err)
 	}
 
-
 	// Now you can render the template with the given
 	// pongo2.Context how often you want to.
-	out, err := tpl.Execute(pongo2.Context{"name": "florian"})
+	out, err := tpl.Execute(pongo2.Context{"name": "florian", "a": func() string { return "ok" }})
 	if err != nil {
 		panic(err)
 	}
