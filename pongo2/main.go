@@ -37,6 +37,8 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
+
+
 	// Now you can render the template with the given
 	// pongo2.Context how often you want to.
 	out, err := tpl.Execute(pongo2.Context{"name": "florian"})
