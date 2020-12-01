@@ -37,6 +37,7 @@ require (
 	github.com/grpc-ecosystem/go-grpc-middleware v1.1.0
 	github.com/grpc-ecosystem/go-grpc-prometheus v1.2.0
 	github.com/grpc-ecosystem/grpc-gateway/v2 v2.0.1
+	github.com/hajimehoshi/go-mp3 v0.3.1
 	github.com/hajimehoshi/oto v0.6.3
 	github.com/hashicorp/memberlist v0.1.3
 	github.com/iancoleman/orderedmap v0.1.0
@@ -73,5 +74,6 @@ require (
 	google.golang.org/grpc v1.33.1
 	google.golang.org/protobuf v1.25.0
 	gopkg.in/yaml.v2 v2.3.0
+	xorm.io/core v0.7.2 // indirect
 	xorm.io/xorm v1.0.3
 )
