@@ -43,7 +43,7 @@ require (
 	github.com/lucas-clemente/quic-go v0.17.1
 	github.com/lxn/walk v0.0.0-20191113135339-bf589de20b3c
 	github.com/mattn/go-sqlite3 v1.14.0
-	github.com/nats-io/nats.go v1.10.0 // indirect
+	github.com/nats-io/go-nats v1.7.2 // indirect
 	github.com/nats-rpc/nrpc v0.0.0-20201006200202-510bc58f2c5d
 	github.com/opentracing/opentracing-go v1.2.0 // indirect
 	github.com/pborman/uuid v1.2.0
