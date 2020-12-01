@@ -13,7 +13,7 @@ import (
 	_ "github.com/mattn/go-sqlite3"
 )
 
-func main() {
+func main1() {
 	client, err := ent.Open("sqlite3", "file:ent?mode=memory&cache=shared&_fk=1")
 	if err != nil {
 		log.Fatalf("failed opening connection to sqlite: %v", err)
@@ -272,4 +272,18 @@ func QueryGroupWithUsers(ctx context.Context, client *ent.Client) error {
 	log.Println("groups returned:", groups)
 	// Output: (Group(Name=GitHub), Group(Name=GitLab),)
 	return nil
+}
+
+type worker interface {
+	work()
+}
+
+type person struct {
+	name string
+	worker
+}
+
+func main() {
+	var w worker = person{}
+	fmt.Println(w)
 }
