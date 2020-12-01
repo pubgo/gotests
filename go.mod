@@ -15,6 +15,7 @@ require (
 	github.com/chrusty/protoc-gen-jsonschema v0.0.0-20200925202108-800eac78ab6f
 	github.com/dave/jennifer v1.4.0
 	github.com/denisbrodbeck/machineid v1.0.1
+	github.com/facebook/ent v0.5.1
 	github.com/faiface/gui v0.0.0-20190522095505-ed00d80d15da
 	github.com/faiface/mainthread v0.0.0-20171120011319-8b78f0a41ae3
 	github.com/faiface/pixel v0.9.0
@@ -43,14 +44,15 @@ require (
 	github.com/iancoleman/orderedmap v0.1.0
 	github.com/lucas-clemente/quic-go v0.17.1
 	github.com/lxn/walk v0.0.0-20191113135339-bf589de20b3c
-	github.com/mattn/go-sqlite3 v1.14.0
+	github.com/mattn/go-sqlite3 v1.14.5
 	github.com/nats-io/go-nats v1.7.2 // indirect
 	github.com/nats-rpc/nrpc v0.0.0-20201006200202-510bc58f2c5d
 	github.com/opentracing/opentracing-go v1.2.0 // indirect
 	github.com/pborman/uuid v1.2.0
 	github.com/pubgo/g v0.2.52
+	github.com/pubgo/tikdog v0.0.0-20201130142326-26dbaa1f432c
 	github.com/pubgo/x v0.2.56
-	github.com/pubgo/xerror v0.2.12
+	github.com/pubgo/xerror v0.2.13
 	github.com/pubgo/xprotogen v0.0.2
 	github.com/robotn/gohook v0.30.3
 	github.com/rocketlaunchr/react v1.0.9
@@ -73,7 +75,7 @@ require (
 	google.golang.org/genproto v0.0.0-20201019141844-1ed22bb0c154
 	google.golang.org/grpc v1.33.1
 	google.golang.org/protobuf v1.25.0
-	gopkg.in/yaml.v2 v2.3.0
+	gopkg.in/yaml.v2 v2.4.0
 	xorm.io/core v0.7.2 // indirect
-	xorm.io/xorm v1.0.3
+	xorm.io/xorm v1.0.5
 )
