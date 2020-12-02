@@ -1,7 +1,7 @@
 package bytestr
 
 import (
-	"github.com/pubgo/gotests/testmonkey/a1"
+	"github.com/pubgo/gotests/testmonkey/internal/a1"
 	"reflect"
 	"unsafe"
 )
