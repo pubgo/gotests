@@ -1,0 +1,46 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@1.x.x/dist/tailwind.min.css" rel="stylesheet"/>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+</head>
+<body>
+
+<!-- Initalise Alpine.js with an array of foodtypes, and a variable to store the selected foodtype -->
+<div class="m4" x-data="{ foodArray: ['pizza','donuts','tacos'], selectedFoodType: null}">
+
+    <nav>
+        <!-- Start with a "Show all" tag that is selected by default -->
+        <a
+                href="#"
+                class="w-6 link dib m3 p2 ba b--black pointer"
+                :class="{ 'pink b--pink' : selectedFoodType == null }"
+                x-text="'all the foods'"
+                @click.prevent="selectedFoodType = null, console.log('selectedFoodType = everything')"
+        >
+        </a>
+
+        <!-- Loop through the foodtype array and create clickable tags. When a tag is active, add classes for pink text & borders. -->
+        <template x-for="foodItem in foodArray" :key="foodItem">
+            <a
+                    href="#"
+                    class="w-6 link dib m3 p2 ba b--black pointer"
+                    :class="{ 'pink b--pink' : selectedFoodType == foodItem }"
+                    x-text="foodItem"
+                    @click.prevent="selectedFoodType = foodItem, console.log('selectedFoodType = '+selectedFoodType)"
+            >
+            </a>
+        </template>
+
+    </nav>
+
+    <!-- List out all the foods, and display them if selected or showing "all the foods" -->
+    <div class="m4" x-show="selectedFoodType == null || selectedFoodType == 'pizza'">Pepperoni Pizza 🍕</div>
+    <div class="m4" x-show="selectedFoodType == null || selectedFoodType == 'pizza'">Hawaiian Pizza 🍍</div>
+    <div class="m4" x-show="selectedFoodType == null || selectedFoodType == 'donuts'">Chocolate Donut 🍩</div>
+    <div class="m4" x-show="selectedFoodType == null || selectedFoodType == 'tacos'">Fish Taco 🌮</div>
+
+</div>
+</body>
+</html>

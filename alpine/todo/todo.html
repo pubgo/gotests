@@ -1,0 +1,45 @@
+<html>
+<body>
+
+<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+
+<script>
+    Alpine.addMagicProperty('post', function () {
+        return function (url, data = {}) {
+            return fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                redirect: 'follow',
+                body: JSON.stringify(data)
+            });
+        }
+    });
+</script>
+
+<div x-data="{ items: [], adding: false }" x-init="$refs.ok.disabled = true">
+    <template x-for="item in items" :key="item">
+        <div>
+            <span x-text="item"></span>
+            <button @click="items = items.filter(i => i !== item)">DEL</button>
+        </div>
+    </template>
+
+    <button type="button" @click="$post('/posts', { id: 1, title: 'Awesome New Post' })">
+        Create Post
+    </button>
+
+    <button @click="adding = true">ADD</button>
+    <div x-show.transition="adding" @click.away="adding = false">
+        <label for="name">Name:</label>
+        <input id="name" x-model="name" @keyup="$refs.ok.disabled = name.length === 0"/>
+
+        <button @click="adding = false">CANCEL</button>
+        <button @click="adding = false; items.push(name); name = ''; $refs.ok.disabled = true" x-ref="ok">OK</button>
+    </div>
+
+</div>
+
+</body>
+</html>

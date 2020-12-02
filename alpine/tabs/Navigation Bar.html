@@ -1,0 +1,42 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@1.x.x/dist/tailwind.min.css" rel="stylesheet"/>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+</head>
+<body>
+
+<div class="p-4" x-data="{navigationOpen: false}">
+    <div class="rounded-full bg-gray-900 overflow-hidden flex justify-between items-center text-white px-6 container mx-auto">
+        <div class="flex items-center h-16 relative z-50">
+            LOGO
+        </div>
+        <div class="flex justify-end items-center">
+            <div class="flex mt-4 lg:mt-0 items-center lg:block py-16 scal lg:py-0 fixed lg:static w-2/3 lg:w-auto left-0 top-0 bottom-0 overflow-x-auto  bg-gray-700 lg:bg-gray-900 z-30 transform transition-all duration-300 origin-top-left lg:origin-right" @click.away="navigationOpen = false" x-show="navigationOpen" x-transition:enter-start="opacity-0 lg:scale-75" x-transition:enter-end="opacity-100 lg:scale-100" x-transition:leave-start="opacity-100 lg:scale-100" x-transition:leave-end="opacity-0 lg:scale-75">
+                <ul class="flex text-white text-lg lg:text-sm flex-wrap items-center max-h-full overflow-auto">
+                    <li class="lg:mx-2 w-full lg:w-auto shadow lg:shadow-none">
+                        <a href="#" class="p-4 block hover:text-red-500">Link</a>
+                    </li>
+                    <li class="lg:mx-2 w-full lg:w-auto shadow lg:shadow-none">
+                        <a href="#" class="p-4 block hover:text-red-500">Link</a>
+                    </li>
+                    <li class="lg:mx-2 w-full lg:w-auto shadow lg:shadow-none">
+                        <a href="#" class="p-4 block hover:text-red-500">Link</a>
+                    </li>
+                    <li class="lg:mx-2 w-full lg:w-auto shadow lg:shadow-none">
+                        <a href="#" class="p-4 block hover:text-red-500">Link</a>
+                    </li>
+                </ul>
+
+            </div>
+            <button class="flex justify-center flex-col w-6 h-8 space-y-1 flex-wrap focus:outline-none" @click="navigationOpen = !navigationOpen">
+                <span class="h-1 w-6 bg-white rounded" x-show.transition="!navigationOpen"></span>
+                <span class="h-1 w-6 bg-white rounded"></span>
+                <span class="h-1 w-6 bg-white rounded" x-show.transition="!navigationOpen"></span>
+            </button>
+        </div>
+    </div>
+
+</body>
+</html>
