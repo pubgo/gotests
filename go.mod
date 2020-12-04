@@ -50,10 +50,11 @@ require (
 	github.com/opentracing/opentracing-go v1.2.0 // indirect
 	github.com/pborman/uuid v1.2.0
 	github.com/pubgo/g v0.2.52
-	github.com/pubgo/tikdog v0.0.0-20201130142326-26dbaa1f432c
+	github.com/pubgo/tikdog v0.0.0-20201130142326-26dbaa1f432c // indirect
 	github.com/pubgo/x v0.2.56
 	github.com/pubgo/xerror v0.2.13
 	github.com/pubgo/xprotogen v0.0.2
+	github.com/radovskyb/watcher v1.0.7
 	github.com/robotn/gohook v0.30.3
 	github.com/rocketlaunchr/react v1.0.9
 	github.com/rs/xid v1.2.1
