@@ -3,7 +3,7 @@ package main
 import (
 	"context"
 	"fmt"
-	"github.com/pubgo/gotests/testmonkey/internal/a1"
+	"github.com/pubgo/gotests/testmonkey_patch/internal/a1"
 	_ "google.golang.org/grpc"
 	"net"
 	_ "unsafe"

@@ -47,7 +47,7 @@ func (*Request) Before1(a, b int) bool {
 func TestEnv123(t *testing.T) {
 	var program *vm.Program
 	var err error
-	program, err = expr.Compile(`Join(TB1(a=1||b=2&&v>=2) as a,Tb2(v=2) as b,a.a=b.b)`,
+	program, err = expr.Compile(`a==false`,
 		expr.Env(&Request{}),
 	)
 	xerror.Panic(err)
