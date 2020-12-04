@@ -67,7 +67,7 @@ func main() {
 	//}()
 
 	// Start the watching process - it'll check for changes every 100ms.
-	if err := w.Start(time.Millisecond * 100); err != nil {
+	if err := w.Start(time.Second); err != nil {
 		log.Fatalln(err)
 	}
 }
