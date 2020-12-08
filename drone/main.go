@@ -3,10 +3,10 @@ package main
 import (
 	"context"
 	"fmt"
-	"github.com/pubgo/xerror"
 	"os"
 
 	"github.com/drone/drone-go/drone"
+	"github.com/pubgo/xerror"
 	"golang.org/x/oauth2"
 )
 
@@ -37,9 +37,9 @@ func main() {
 	xerror.Panic(err)
 	fmt.Printf("%#v\n\n", repo)
 
-	lst,err:=client.BuildList(os.Getenv("Repo_namespace"), os.Getenv("Repo_name"),drone.ListOptions{})
+	lst, err := client.BuildList(os.Getenv("Repo_namespace"), os.Getenv("Repo_name"), drone.ListOptions{})
 	xerror.Panic(err)
-	for i:=range lst{
+	for i := range lst {
 		fmt.Printf("%#v\n\n", lst[i])
 	}
 
