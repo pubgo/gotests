@@ -2,10 +2,11 @@ package main
 
 import (
 	"fmt"
+	"os"
+
 	_ "github.com/mattn/go-sqlite3"
 	"github.com/pubgo/gotests/xorm/models"
 	"github.com/pubgo/xerror"
-	"os"
 	"xorm.io/xorm"
 	"xorm.io/xorm/log"
 	"xorm.io/xorm/names"
