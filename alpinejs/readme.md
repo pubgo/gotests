@@ -5,3 +5,6 @@ https://github.com/aniftyco/awesome-tailwindcss
 https://merakiui.com
 https://heroicons.com
 https://templates.digizu.co.uk
+https://tailwind.run/new
+https://tailwindcomponents.com/components
+https://kutty.netlify.app/docs
