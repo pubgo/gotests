@@ -8,3 +8,4 @@ https://templates.digizu.co.uk
 https://tailwind.run/new
 https://tailwindcomponents.com/components
 https://kutty.netlify.app/docs
+https://kutty.netlify.app/docs/alert/
