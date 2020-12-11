@@ -9,3 +9,6 @@ https://tailwind.run/new
 https://tailwindcomponents.com/components
 https://kutty.netlify.app/docs
 https://kutty.netlify.app/docs/alert/
+https://github.com/ryangjchandler/spruce
+https://mertjf.github.io/tailblocks/
+https://tailwindtemplates.io/buttons/
