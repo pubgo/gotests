@@ -63,6 +63,7 @@ require (
 	github.com/sipin/gorazor v1.2.2
 	github.com/sirupsen/logrus v1.4.2
 	github.com/skratchdot/open-golang v0.0.0-20160302144031-75fb7ed4208c
+	github.com/spf13/viper v1.7.1
 	github.com/stretchr/testify v1.6.1
 	github.com/valyala/fasttemplate v1.2.1
 	github.com/valyala/quicktemplate v1.6.3

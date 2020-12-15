@@ -15,5 +15,5 @@ type Comment struct {
 	Name      string    `json:"name" xorm:"varchar(25) notnull unique 'name'"`
 	CreatedAt time.Time `xorm:"created"`
 	UpdatedAt time.Time `xorm:"updated"`
-	Article   Article   `json:"name" xorm:"varchar(25) notnull unique 'name'"`
+	Article   Article   `json:"article" xorm:"varchar(25) notnull unique 'article'"`
 }

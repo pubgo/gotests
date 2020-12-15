@@ -46,7 +46,8 @@ func main() {
 	dialects.RegisterDriver("sqlite3_custom", dialects.QueryDriver("sqlite3"))
 	dialects.RegisterDialect("sqlite3_custom", func() dialects.Dialect { return dialects.QueryDialect("sqlite3") })
 
-	engine, err := xorm.NewEngine("sqlite3", "./test.db")
+	//engine, err := xorm.NewEngine("sqlite3", "./test.db")
+	engine, err := xorm.NewEngine("sqlite3","file:test.db?cache=shared&mode=memory")
 	xerror.Panic(err)
 	engine.ShowSQL(true)
 	engine.Logger().SetLevel(log.LOG_DEBUG)
