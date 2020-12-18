@@ -12,11 +12,11 @@ import (
 )
 
 type hh struct {
-	HH string
+	h1 string
 }
 
 //go:linkname github.com/pubgo/gotests/testmonkey_patch/internal/a1.(*MyStruct).hello hello
-func hello(t *a1.MyStruct) string{
+func hello(t *a1.MyStruct) string {
 	return "test hello ssss"
 }
 
@@ -32,10 +32,8 @@ func main() {
 	//	return nil, nil
 	//}, ""))
 
-	hh := a1.Newhh("sss")
-	fmt.Println(hh.HH)
-	dt := MyStructToBytes(unsafe.Pointer(hh))
-	fmt.Println(BytesToMyStruct(dt).HH)
+	dt := MyStructToBytes(unsafe.Pointer(a1.Newhh("sss")))
+	fmt.Println(BytesToMyStruct(dt).h1)
 	hh1 := BytesToMyStruct(dt)
 	fmt.Println(init11(hh1))
 }

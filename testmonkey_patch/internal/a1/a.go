@@ -21,13 +21,13 @@ func New(a, b string) *MyStruct {
 }
 
 type hh struct {
-	HH string
+	h1 string
 }
 
 func (t hh) init1() string {
-	return t.HH
+	return t.h1
 }
 
 func Newhh(s string) *hh {
-	return &hh{HH: s}
+	return &hh{h1: s}
 }
