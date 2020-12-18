@@ -17,6 +17,7 @@ require (
 	github.com/dave/jennifer v1.4.0
 	github.com/denisbrodbeck/machineid v1.0.1
 	github.com/drone/drone-go v1.4.0
+	github.com/elazarl/go-bindata-assetfs v1.0.1 // indirect
 	github.com/facebook/ent v0.5.1
 	github.com/faiface/gui v0.0.0-20190522095505-ed00d80d15da
 	github.com/faiface/mainthread v0.0.0-20171120011319-8b78f0a41ae3
@@ -38,6 +39,7 @@ require (
 	github.com/golang/protobuf v1.4.3
 	github.com/google/go-cmp v0.5.3
 	github.com/gopherjs/gopherjs v0.0.0-20200217142428-fce0ec30dd00
+	github.com/gowins/gotty v2.0.2+incompatible
 	github.com/grpc-ecosystem/go-grpc-middleware v1.1.0
 	github.com/grpc-ecosystem/go-grpc-prometheus v1.2.0
 	github.com/grpc-ecosystem/grpc-gateway/v2 v2.0.1
@@ -48,6 +50,8 @@ require (
 	github.com/lucas-clemente/quic-go v0.17.1
 	github.com/lxn/walk v0.0.0-20191113135339-bf589de20b3c
 	github.com/magiconair/properties v1.8.4 // indirect
+	github.com/mattn/go-gtk v0.0.0-20191030024613-af2e013261f5
+	github.com/mattn/go-pointer v0.0.1 // indirect
 	github.com/mattn/go-sqlite3 v1.14.5
 	github.com/monochromegane/terminal v0.0.0-20161222050454-9bc47e2707d9
 	github.com/nats-io/go-nats v1.7.2 // indirect

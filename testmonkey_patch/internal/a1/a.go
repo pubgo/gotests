@@ -6,7 +6,11 @@ type MyStruct struct {
 }
 
 func (t *MyStruct) hello() string {
-	return t.a+t.b
+	return t.a + t.b
+}
+
+func (t *MyStruct) Hello() string {
+	return t.hello()
 }
 
 func New(a, b string) *MyStruct {
@@ -14,4 +18,16 @@ func New(a, b string) *MyStruct {
 		a: a,
 		b: b,
 	}
+}
+
+type hh struct {
+	HH string
+}
+
+func (t hh) init1() string {
+	return t.HH
+}
+
+func Newhh(s string) *hh {
+	return &hh{HH: s}
 }
