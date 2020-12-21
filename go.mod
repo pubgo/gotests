@@ -56,6 +56,7 @@ require (
 	github.com/monochromegane/terminal v0.0.0-20161222050454-9bc47e2707d9
 	github.com/nats-io/go-nats v1.7.2 // indirect
 	github.com/nats-rpc/nrpc v0.0.0-20201006200202-510bc58f2c5d
+	github.com/panjf2000/gnet v1.3.2
 	github.com/pborman/uuid v1.2.0
 	github.com/pelletier/go-toml v1.8.1 // indirect
 	github.com/pubgo/g v0.2.52
@@ -81,10 +82,9 @@ require (
 	github.com/vcaesar/imgo v0.10.0
 	github.com/webview/webview v0.0.0-20200724072439-e0c01595b361
 	github.com/xeipuuv/gojsonschema v1.2.0
+	github.com/xtaci/gaio v1.2.7
 	github.com/yanyiwu/gojieba v1.1.2
 	github.com/yomorun/yomo v0.1.14
-	go.uber.org/multierr v1.6.0 // indirect
-	go.uber.org/zap v1.16.0 // indirect
 	gocv.io/x/gocv v0.24.0
 	golang.org/x/crypto v0.0.0-20201203163018-be400aefbc4c
 	golang.org/x/image v0.0.0-20200801110659-972c09e46d76

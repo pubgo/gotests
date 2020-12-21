@@ -1,16 +1,15 @@
 package netdx
 
 import (
-	"context"
 	"net"
-	"reflect"
-	"syscall"
 	"time"
-	"unsafe"
+	_ "unsafe"
 )
 
-//go:linkname dialIP1 net.(*sysDialer).dialIP
-func dialIP1(sd *sysDialer, ctx context.Context, laddr, raddr *net.IPAddr) (conn *net.IPConn, err error) {
+//go:linkname net.DialIP DialIP
+func DialIP(network string, laddr, raddr *net.IPAddr) (conn *net.IPConn, err error) {
+	conn, err = net.DialIP(network, laddr, raddr)
+
 	id := generateID()
 
 	defer func() {
@@ -33,38 +32,10 @@ func dialIP1(sd *sysDialer, ctx context.Context, laddr, raddr *net.IPAddr) (conn
 	})
 	defer timer.Stop()
 
-	network, proto, err := parseNetwork(ctx, sd.network, true)
-	if err != nil {
-		return nil, err
-	}
+	return
 
-	switch network {
-	case "ip", "ip4", "ip6":
-	default:
-		return nil, net.UnknownNetworkError(sd.network)
-	}
-
-	// WTF
-	_type := symbolTable["go.itab.*net.IPAddr,net.sockaddr"]
-
-	fd, err := internetSocket(ctx, sd.network,
-		_type, reflect.ValueOf(laddr).Pointer(),
-		_type, reflect.ValueOf(raddr).Pointer(),
-		syscall.SOCK_RAW, proto, "dial", sd.Dialer.Control)
-
-	if err != nil {
-		return nil, err
-	}
-
-	return newIPConn(fd), nil
 }
 
 func ipDx() {
 	checkGCFlags()
 }
-
-//go:linkname newIPConn net.newIPConn
-func newIPConn(fd unsafe.Pointer) *net.IPConn
-
-//go:linkname parseNetwork net.parseNetwork
-func parseNetwork(ctx context.Context, network string, needsProto bool) (afnet string, proto int, err error)

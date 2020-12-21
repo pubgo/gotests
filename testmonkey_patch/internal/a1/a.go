@@ -28,6 +28,14 @@ func (t hh) init1() string {
 	return t.h1
 }
 
+func (t hh) Init1() string {
+	return t.h1
+}
+
 func Newhh(s string) *hh {
 	return &hh{h1: s}
+}
+
+func TestName() string {
+	return "TestName"
 }

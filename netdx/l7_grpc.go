@@ -10,12 +10,12 @@ import (
 	"google.golang.org/grpc/connectivity"
 )
 
-//go:linkname channelIsOn google.golang.org/grpc/internal/channelz.IsOn
+//go:linkname google.golang.org/grpc/internal/channelz.IsOn channelIsOn
 func channelIsOn() bool {
 	return true
 }
 
-//go:linkname RegisterChannel google.golang.org/grpc/internal/channelz.RegisterChannel
+//go:linkname google.golang.org/grpc/internal/channelz.RegisterChannel RegisterChannel
 func RegisterChannel(_ uintptr, cc **grpc.ClientConn, _ int64, _ string) int64 {
 	c := &gConn{generateID(), *cc}
 	id := db.Put(c)
@@ -51,39 +51,39 @@ func RegisterChannel(_ uintptr, cc **grpc.ClientConn, _ int64, _ string) int64 {
 	return id
 }
 
-//go:linkname RegisterSubChannel google.golang.org/grpc/internal/channelz.RegisterSubChannel
+//go:linkname google.golang.org/grpc/internal/channelz.RegisterSubChannel RegisterSubChannel
 func RegisterSubChannel() int64 {
 	return 0
 }
 
-//go:linkname RegisterNormalSocket google.golang.org/grpc/internal/channelz.RegisterNormalSocket
+//go:linkname google.golang.org/grpc/internal/channelz.RegisterNormalSocket RegisterNormalSocket
 func RegisterNormalSocket() int64 {
 	return 0
 }
 
-//go:linkname RegisterListenSocket google.golang.org/grpc/internal/channelz.RegisterListenSocket
+//go:linkname google.golang.org/grpc/internal/channelz.RegisterListenSocket RegisterListenSocket
 func RegisterListenSocket() int64 {
 	return 0
 }
 
-//go:linkname RegisterServer google.golang.org/grpc/internal/channelz.RegisterServer
+//go:linkname google.golang.org/grpc/internal/channelz.RegisterServer RegisterServer
 func RegisterServer() int64 {
 	return 0
 }
 
-//go:linkname AddTraceEvent google.golang.org/grpc/internal/channelz.AddTraceEvent
+//go:linkname google.golang.org/grpc/internal/channelz.AddTraceEvent AddTraceEvent
 func AddTraceEvent() {
 	return
 }
 
-//go:linkname RemoveEntry google.golang.org/grpc/internal/channelz.RemoveEntry
+//go:linkname google.golang.org/grpc/internal/channelz.RemoveEntry RemoveEntry
 func RemoveEntry(id int64) {
 	if c := db.Get(id); c != nil {
 		L7Errorf("[GRPC-DX] id: %d, tears down the ClientConn, target: %s \n", c.rid, c.Target())
 	}
 }
 
-//go:linkname GrpcInvoke google.golang.org/grpc.invoke
+//go:linkname google.golang.org/grpc.invoke GrpcInvoke
 func GrpcInvoke(ctx context.Context, method string, req, reply interface{}, cc *grpc.ClientConn, opts ...grpc.CallOption) (err error) {
 	c := db.GetByConn(cc)
 	if c == nil {
@@ -138,25 +138,6 @@ func GrpcInvoke(ctx context.Context, method string, req, reply interface{}, cc *
 
 func grpcDx() {
 	checkGCFlags()
-
-	// AS NEEDED
-	if _, ok := symbolTable["google.golang.org/grpc/internal/channelz.IsOn"]; !ok {
-		return
-	}
-	if _, ok := symbolTable["google.golang.org/grpc/internal/channelz.RegisterChannel"]; !ok {
-		return
-	}
-
-	//func invoke(ctx context.Context, method string, req, reply interface{}, cc *ClientConn, opts ...CallOption) error {
-	//	cs, err := newClientStream(ctx, unaryStreamDesc, cc, method, opts...)
-	//	if err != nil {
-	//		return err
-	//	}
-	//	if err := cs.SendMsg(req); err != nil {
-	//		return err
-	//	}
-	//	return cs.RecvMsg(reply)
-	//}
 }
 
 //go:linkname unaryStreamDesc google.golang.org/grpc.unaryStreamDesc

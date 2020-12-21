@@ -17,7 +17,7 @@ const (
 	UNIX = "unix"
 )
 
-//go:linkname CloseConn net.(*conn).Close
+//go:linkname net.(*conn).Close CloseConn
 func CloseConn(c *conn) error {
 	if !ok(unsafe.Pointer(c)) {
 		return syscall.EINVAL
@@ -36,7 +36,7 @@ func CloseConn(c *conn) error {
 	return nil
 }
 
-//go:linkname WriteConn net.(*conn).Write
+//go:linkname net.(*conn).Write WriteConn
 func WriteConn(c *conn, b []byte) (int, error) {
 	if !ok(unsafe.Pointer(c)) {
 		return 0, syscall.EINVAL
@@ -66,7 +66,7 @@ func WriteConn(c *conn, b []byte) (int, error) {
 	return n, err
 }
 
-//go:linkname ReadConn net.(*conn).Read
+//go:linkname net.(*conn).Read ReadConn
 func ReadConn(c *conn, b []byte) (int, error) {
 	if !ok(unsafe.Pointer(c)) {
 		return 0, syscall.EINVAL
@@ -96,6 +96,10 @@ var errFn = func(c *conn, op string, err error) *net.OpError {
 
 func connDx() {
 	checkGCFlags()
+}
+
+type netFD struct {
+	pfd int // poll.FD
 }
 
 type connInfo struct {
@@ -194,10 +198,6 @@ type sysDialer struct {
 
 type conn struct {
 	fd *netFD
-}
-
-type netFD struct {
-	pfd int // poll.FD
 }
 
 //go:linkname ok  net.(*conn).ok

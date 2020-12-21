@@ -2,7 +2,6 @@ package netdx
 
 import (
 	"math/rand"
-	"os"
 	"time"
 	_ "unsafe"
 )
@@ -82,7 +81,7 @@ func checkGCFlags() {
 	help := func() {
 		errorf("[ERROR] Please add \"all=-N -l\" to your gcflags \n")
 		errorf("E.x. go run -gcflags=\"all=-N -l\" main.go \n")
-		os.Exit(1)
+		//os.Exit(1)
 	}
 
 	help()
