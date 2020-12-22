@@ -28,8 +28,8 @@ func main() {
 		Collection("test_hello", options.Collection().
 			//SetReadPreference(readpref.PrimaryPreferred()).
 			SetReadPreference(readpref.SecondaryPreferred()).
-			SetWriteConcern(writeconcern.New(writeconcern.W(2))).
-			SetReadConcern(readconcern.Majority()))
+			SetWriteConcern(writeconcern.New(writeconcern.W(1))).
+			SetReadConcern(readconcern.Local()))
 
 	//cc := c.Database("test_hello").Collection("test_hello")
 	//cc1 := c.Database("test_hello").Collection("test_hello")

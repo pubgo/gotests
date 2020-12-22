@@ -14,6 +14,7 @@ require (
 	github.com/asim/protoc-gen-go-micro/v3 v3.0.0
 	github.com/blend/go-sdk v0.0.0-20201210155311-fbbfabf18805 // indirect
 	github.com/chrusty/protoc-gen-jsonschema v0.0.0-20200925202108-800eac78ab6f
+	github.com/cloudflare/tableflip v1.2.0
 	github.com/dave/jennifer v1.4.0
 	github.com/denisbrodbeck/machineid v1.0.1
 	github.com/drone/drone-go v1.4.0
