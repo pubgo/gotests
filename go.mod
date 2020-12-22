@@ -85,6 +85,7 @@ require (
 	github.com/xtaci/gaio v1.2.7
 	github.com/yanyiwu/gojieba v1.1.2
 	github.com/yomorun/yomo v0.1.14
+	go.mongodb.org/mongo-driver v1.1.2
 	gocv.io/x/gocv v0.24.0
 	golang.org/x/crypto v0.0.0-20201203163018-be400aefbc4c
 	golang.org/x/image v0.0.0-20200801110659-972c09e46d76
