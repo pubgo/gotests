@@ -2,10 +2,13 @@ package main
 
 import (
 	"flag"
+	"fmt"
 	"github.com/pubgo/gotests/unix_fork/fd"
+	"golang.org/x/sys/unix"
 	"log"
 	"net"
 	"os"
+	"time"
 )
 
 var (
@@ -26,12 +29,26 @@ func main() {
 		os.Exit(1)
 	}
 
-	f, err := os.Open(filename)
-	if err != nil {
-		log.Fatal(err)
-	}
-	defer f.Close()
+	unix.Unlink(socket)
 
+	fmt.Println(filename)
+	f, err := os.OpenFile(filename, os.O_RDWR|os.O_CREATE, 0755)
+	if err != nil {
+		panic(err)
+	}
+
+	//dt, err := ioutil.ReadAll(f)
+	//fmt.Println(string(dt), err)
+
+	go func() {
+		for {
+			fmt.Println(f.Write([]byte("sender\n")))
+			fmt.Println(f.Sync())
+			time.Sleep(time.Second)
+			//dt, err := ioutil.ReadFile(filename)
+			//fmt.Println(string(dt), err)
+		}
+	}()
 
 	l, err := net.Listen("unix", socket)
 	if err != nil {
