@@ -16,7 +16,7 @@ func main() {
 
 	for {
 		conn.Write([]byte("hello"))
-		time.Sleep(time.Millisecond * 100)
+		time.Sleep(time.Second)
 		var data = make([]byte, 1024)
 		conn.Read(data)
 		fmt.Println(string(data))

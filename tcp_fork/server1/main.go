@@ -2,13 +2,18 @@ package main
 
 import (
 	"fmt"
-	"github.com/pubgo/xerror"
 	"net"
 	"os"
 	"os/signal"
 	"syscall"
 	"time"
 )
+
+func Panic(err error) {
+	if err != nil {
+		panic(err)
+	}
+}
 
 var forkExec = func(argv0 string, argv []string, files ...uintptr) (pid int, err error) {
 	lll := []uintptr{os.Stdin.Fd(), os.Stdout.Fd(), os.Stderr.Fd()}
@@ -40,7 +45,7 @@ func main() {
 
 	if isUpgrade {
 		conn, err := net.FileConn(os.NewFile(4, ""))
-		xerror.Panic(err)
+		Panic(err)
 
 		go func() {
 			for {
@@ -61,15 +66,15 @@ func main() {
 	}
 
 	raw, err := rawConn.SyscallConn()
-	xerror.Panic(err)
+	Panic(err)
 
 	var dupfd uintptr
-	xerror.Panic(raw.Control(func(fd uintptr) {
+	Panic(raw.Control(func(fd uintptr) {
 		dupfd, err = dupFd(fd)
 		if err != nil {
 			panic(err)
 		}
-		xerror.Panic(err)
+		Panic(err)
 	}))
 
 	connList = append(connList, dupfd)
@@ -87,12 +92,12 @@ func main() {
 			}
 
 			raw, err := rawConn.SyscallConn()
-			xerror.Panic(err)
+			Panic(err)
 
 			var dupfd uintptr
-			xerror.Panic(raw.Control(func(fd uintptr) {
+			Panic(raw.Control(func(fd uintptr) {
 				dupfd, err = dupFd(fd)
-				xerror.Panic(err)
+				Panic(err)
 			}))
 
 			connList = append(connList, dupfd)
@@ -116,7 +121,7 @@ func main() {
 	os.Setenv("fork", "true")
 
 	pid, err := forkExec(os.Args[0], os.Args, connList...)
-	xerror.Panic(err)
+	Panic(err)
 
 	go func() {
 		// 防止子进程变成僵尸进程
