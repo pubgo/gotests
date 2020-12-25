@@ -9,9 +9,9 @@ import (
 
 type Stream interface {
 	Await() interface{}
-	AChan() chan interface{}
-	Cancel()
 	Async(fn func(y Yield))
+	Chan() chan interface{}
+	Cancel()
 }
 
 type Yield interface {
@@ -36,7 +36,7 @@ func (s stream) Await() interface{} {
 	return <-s.data
 }
 
-func (s stream) AChan() chan interface{} {
+func (s stream) Chan() chan interface{} {
 	return s.data
 }
 
@@ -71,7 +71,7 @@ func getData() Stream {
 
 func main() {
 	ss := getData()
-	for dt := range ss.AChan() {
+	for dt := range ss.Chan() {
 		fmt.Println(dt)
 		time.Sleep(time.Second)
 
