@@ -8,6 +8,7 @@ require (
 	github.com/10cella/yomo-json-codec v0.2.6
 	github.com/AllenDang/gimu v0.0.0-20200217071344-b824d3f8d7e6
 	github.com/JesusIslam/tldr v0.6.0
+	github.com/VividCortex/ewma v1.1.1
 	github.com/alecthomas/jsonschema v0.0.0-20200530073317-71f438968921
 	github.com/antonmedv/expr v1.8.8
 	github.com/asim/go-micro/v3 v3.2.0
@@ -90,6 +91,7 @@ require (
 	github.com/yanyiwu/gojieba v1.1.2
 	github.com/yomorun/yomo v0.1.14
 	go.mongodb.org/mongo-driver v1.1.2
+	go.uber.org/atomic v1.7.0
 	gocv.io/x/gocv v0.24.0
 	golang.org/x/crypto v0.0.0-20201203163018-be400aefbc4c
 	golang.org/x/image v0.0.0-20200801110659-972c09e46d76
