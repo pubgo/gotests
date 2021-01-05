@@ -13,10 +13,14 @@ func main() {
 	}
 
 	e := ewma.NewMovingAverage()  //=> Returns a SimpleEWMA if called without params
-	a := ewma.NewMovingAverage(5) //=> returns a VariableEWMA with a decay of 2 / (5 + 1)
+	a := ewma.NewMovingAverage(1) //=> returns a VariableEWMA with a decay of 2 / (5 + 1)
 
 	for i, f := range samples {
+		if f == 0 {
+			f = e.Value()
+		}
 		e.Add(f)
+
 		fmt.Println("e", i+1, f, e.Value())
 
 		a.Add(f)
