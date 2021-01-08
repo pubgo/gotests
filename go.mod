@@ -51,6 +51,7 @@ require (
 	github.com/hashicorp/memberlist v0.1.3
 	github.com/iancoleman/orderedmap v0.1.0
 	github.com/jhump/protoreflect v1.8.1
+	github.com/kavu/go_reuseport v1.5.0
 	github.com/lucas-clemente/quic-go v0.17.1
 	github.com/lxn/walk v0.0.0-20191113135339-bf589de20b3c
 	github.com/magiconair/properties v1.8.4 // indirect
@@ -82,6 +83,7 @@ require (
 	github.com/spf13/jwalterweatherman v1.1.0 // indirect
 	github.com/spf13/viper v1.7.1
 	github.com/stretchr/testify v1.6.1
+	github.com/valyala/fasthttp v1.16.0 // indirect
 	github.com/valyala/fasttemplate v1.2.1
 	github.com/valyala/quicktemplate v1.6.3
 	github.com/vcaesar/imgo v0.10.0
