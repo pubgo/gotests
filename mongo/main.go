@@ -8,7 +8,6 @@ import (
 	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
-	"go.mongodb.org/mongo-driver/mongo/readconcern"
 	"go.mongodb.org/mongo-driver/mongo/readpref"
 	"go.mongodb.org/mongo-driver/mongo/writeconcern"
 	"os"
@@ -28,8 +27,7 @@ func main() {
 		Collection("test_hello", options.Collection().
 			//SetReadPreference(readpref.PrimaryPreferred()).
 			SetReadPreference(readpref.SecondaryPreferred()).
-			SetWriteConcern(writeconcern.New(writeconcern.W(1))).
-			SetReadConcern(readconcern.Local()))
+			SetWriteConcern(writeconcern.New(writeconcern.W(3), writeconcern.WTimeout(5000))))
 
 	//cc := c.Database("test_hello").Collection("test_hello")
 	//cc1 := c.Database("test_hello").Collection("test_hello")
@@ -37,7 +35,7 @@ func main() {
 		dd, err := cc.InsertOne(context.Background(), bson.M{"foo": "bar", "hello": "world", "pi": 3.14159, "time": time.Now()})
 		xerror.Panic(err)
 		fmt.Println(dd.InsertedID.(primitive.ObjectID).Hex())
-		time.Sleep(time.Millisecond * 200)
+		//time.Sleep(time.Millisecond * 200)
 
 		var data bson.M
 		err = cc.FindOne(context.Background(), bson.M{"_id": dd.InsertedID}).Decode(&data)
