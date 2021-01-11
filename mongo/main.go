@@ -4,6 +4,7 @@ import (
 	"context"
 	"fmt"
 	"github.com/pubgo/xerror"
+	"github.com/pubgo/xprocess"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo"
@@ -27,15 +28,18 @@ func main() {
 		Collection("test_hello", options.Collection().
 			//SetReadPreference(readpref.PrimaryPreferred()).
 			SetReadPreference(readpref.SecondaryPreferred()).
-			SetWriteConcern(writeconcern.New(writeconcern.W(3), writeconcern.WTimeout(5000))))
+			SetWriteConcern(writeconcern.New(writeconcern.W(3))))//writeconcern.WTimeout(2*time.Second)
 
 	//cc := c.Database("test_hello").Collection("test_hello")
 	//cc1 := c.Database("test_hello").Collection("test_hello")
+	var g xprocess.Group
 	for i := 0; ; i++ {
+		now := time.Now()
 		dd, err := cc.InsertOne(context.Background(), bson.M{"foo": "bar", "hello": "world", "pi": 3.14159, "time": time.Now()})
 		xerror.Panic(err)
 		fmt.Println(dd.InsertedID.(primitive.ObjectID).Hex())
 		//time.Sleep(time.Millisecond * 200)
+		fmt.Println(time.Since(now))
 
 		var data bson.M
 		err = cc.FindOne(context.Background(), bson.M{"_id": dd.InsertedID}).Decode(&data)
@@ -43,7 +47,8 @@ func main() {
 			fmt.Println(err.Error(), time.Millisecond*time.Duration(i))
 			continue
 		}
-		//fmt.Println(data)
+		fmt.Println(time.Since(now))
+		fmt.Println(data)
 	}
 
 	// 先从SecondaryPreferred读再从PrimaryPreferred读
