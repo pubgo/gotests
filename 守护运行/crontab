@@ -1,0 +1,1 @@
+* * * * * nohup /bin/sh /data/scripts/process-forever.sh /data/www/service/cron123 >> /dev/null 2>&1 &

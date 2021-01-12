@@ -58,6 +58,7 @@ require (
 	github.com/mattn/go-gtk v0.0.0-20191030024613-af2e013261f5
 	github.com/mattn/go-pointer v0.0.1 // indirect
 	github.com/mattn/go-sqlite3 v1.14.5
+	github.com/micro/go-micro v1.18.0
 	github.com/monochromegane/terminal v0.0.0-20161222050454-9bc47e2707d9
 	github.com/nats-io/go-nats v1.7.2 // indirect
 	github.com/nats-rpc/nrpc v0.0.0-20201006200202-510bc58f2c5d
@@ -66,7 +67,8 @@ require (
 	github.com/pelletier/go-toml v1.8.1 // indirect
 	github.com/pubgo/g v0.2.52
 	github.com/pubgo/x v0.2.56
-	github.com/pubgo/xerror v0.2.13
+	github.com/pubgo/xerror v0.3.14
+	github.com/pubgo/xprocess v0.1.2
 	github.com/pubgo/xprotogen v0.0.2
 	github.com/radovskyb/watcher v1.0.7
 	github.com/robotn/gohook v0.30.3
