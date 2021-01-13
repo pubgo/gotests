@@ -59,6 +59,7 @@ require (
 	github.com/mattn/go-pointer v0.0.1 // indirect
 	github.com/mattn/go-sqlite3 v1.14.5
 	github.com/micro/go-micro v1.18.0
+	github.com/mitchellh/go-glint v0.0.0-20201119015200-53f6eb3bf4d2
 	github.com/monochromegane/terminal v0.0.0-20161222050454-9bc47e2707d9
 	github.com/nats-io/go-nats v1.7.2 // indirect
 	github.com/nats-rpc/nrpc v0.0.0-20201006200202-510bc58f2c5d
