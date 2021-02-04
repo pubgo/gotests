@@ -10,6 +10,7 @@ require (
 	github.com/JesusIslam/tldr v0.6.0
 	github.com/VividCortex/ewma v1.1.1
 	github.com/alecthomas/jsonschema v0.0.0-20200530073317-71f438968921
+	github.com/anaskhan96/soup v1.2.4
 	github.com/antonmedv/expr v1.8.8
 	github.com/asim/go-micro/v3 v3.2.0
 	github.com/asim/protoc-gen-go-micro/v3 v3.0.0
@@ -42,6 +43,7 @@ require (
 	github.com/golang/protobuf v1.4.3
 	github.com/google/go-cmp v0.5.3
 	github.com/gopherjs/gopherjs v0.0.0-20200217142428-fce0ec30dd00
+	github.com/gorilla/websocket v1.4.2
 	github.com/gowins/gotty v2.0.2+incompatible
 	github.com/grpc-ecosystem/go-grpc-middleware v1.1.0
 	github.com/grpc-ecosystem/go-grpc-prometheus v1.2.0
@@ -59,6 +61,7 @@ require (
 	github.com/mattn/go-pointer v0.0.1 // indirect
 	github.com/mattn/go-sqlite3 v1.14.5
 	github.com/micro/go-micro v1.18.0
+	github.com/miguelmota/go-coinmarketcap v0.1.6
 	github.com/mitchellh/go-glint v0.0.0-20201119015200-53f6eb3bf4d2
 	github.com/monochromegane/terminal v0.0.0-20161222050454-9bc47e2707d9
 	github.com/nats-io/go-nats v1.7.2 // indirect
@@ -86,7 +89,7 @@ require (
 	github.com/spf13/jwalterweatherman v1.1.0 // indirect
 	github.com/spf13/viper v1.7.1
 	github.com/stretchr/testify v1.6.1
-	github.com/valyala/fasthttp v1.16.0 // indirect
+	github.com/superoo7/go-gecko v1.0.0
 	github.com/valyala/fasttemplate v1.2.1
 	github.com/valyala/quicktemplate v1.6.3
 	github.com/vcaesar/imgo v0.10.0
