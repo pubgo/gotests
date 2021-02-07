@@ -15,6 +15,7 @@ require (
 	github.com/asim/go-micro/v3 v3.2.0
 	github.com/asim/protoc-gen-go-micro/v3 v3.0.0
 	github.com/blend/go-sdk v0.0.0-20201210155311-fbbfabf18805 // indirect
+	github.com/c-bata/go-prompt v0.2.5
 	github.com/chrusty/protoc-gen-jsonschema v0.0.0-20200925202108-800eac78ab6f
 	github.com/cloudflare/tableflip v1.2.0
 	github.com/dave/jennifer v1.4.0
@@ -57,6 +58,7 @@ require (
 	github.com/lucas-clemente/quic-go v0.17.1
 	github.com/lxn/walk v0.0.0-20191113135339-bf589de20b3c
 	github.com/magiconair/properties v1.8.4 // indirect
+	github.com/manifoldco/promptui v0.8.0
 	github.com/mattn/go-gtk v0.0.0-20191030024613-af2e013261f5
 	github.com/mattn/go-pointer v0.0.1 // indirect
 	github.com/mattn/go-sqlite3 v1.14.5
@@ -69,6 +71,7 @@ require (
 	github.com/panjf2000/gnet v1.3.2
 	github.com/pborman/uuid v1.2.0
 	github.com/pelletier/go-toml v1.8.1 // indirect
+	github.com/pkg/term v1.1.0 // indirect
 	github.com/pubgo/g v0.2.52
 	github.com/pubgo/x v0.2.56
 	github.com/pubgo/xerror v0.3.14

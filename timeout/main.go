@@ -17,6 +17,7 @@ func TimeoutWith(dur time.Duration, fn func()) error {
 		return xerror.Fmt("2")
 	}
 
+	// 内存泄露
 	var ch = make(chan error)
 	go func() {
 		defer func() {

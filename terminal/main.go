@@ -4,6 +4,7 @@ import (
 	"context"
 	"fmt"
 	glint "github.com/mitchellh/go-glint"
+	"github.com/pubgo/xerror"
 	"sync/atomic"
 	"time"
 )
@@ -18,6 +19,7 @@ func main() {
 	}()
 
 	d := glint.New()
+	var dara string
 	d.Append(
 		glint.Style(
 			glint.TextFunc(func(rows, cols uint) string {
@@ -26,5 +28,20 @@ func main() {
 			glint.Color("green"),
 		),
 	)
-	d.Render(context.Background())
+	d.Append(
+		glint.Style(
+			glint.TextFunc(func(rows, cols uint) string {
+				return fmt.Sprintf("%d tests passed %s", atomic.LoadUint32(&counter), dara)
+			}),
+			glint.Color("green"),
+		),
+	)
+	go d.Render(context.Background())
+
+	for {
+		xerror.PanicErr(fmt.Scanln(&dara))
+		fmt.Println()
+		fmt.Println(dara)
+		time.Sleep(time.Second)
+	}
 }

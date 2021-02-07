@@ -1,8 +1,6 @@
 package main
 
-
 import (
-	"context"
 	"time"
 
 	"github.com/mitchellh/go-glint"
@@ -30,5 +28,10 @@ func main() {
 		).MarginLeft(4),
 		glint.Text("\nWaiting..."),
 	)
-	d.Render(context.Background())
+	for {
+		d.RenderFrame()
+		time.Sleep(time.Second)
+	}
+
+	//d.Render(context.Background())
 }
