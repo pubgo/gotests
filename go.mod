@@ -15,6 +15,7 @@ require (
 	github.com/asim/go-micro/v3 v3.2.0
 	github.com/asim/protoc-gen-go-micro/v3 v3.0.0
 	github.com/blend/go-sdk v0.0.0-20201210155311-fbbfabf18805 // indirect
+	github.com/briandowns/spinner v1.12.0
 	github.com/c-bata/go-prompt v0.2.5
 	github.com/chrusty/protoc-gen-jsonschema v0.0.0-20200925202108-800eac78ab6f
 	github.com/cloudflare/tableflip v1.2.0
@@ -53,6 +54,7 @@ require (
 	github.com/hajimehoshi/oto v0.6.3
 	github.com/hashicorp/memberlist v0.1.3
 	github.com/iancoleman/orderedmap v0.1.0
+	github.com/jedib0t/go-pretty/v6 v6.1.0
 	github.com/jhump/protoreflect v1.8.1
 	github.com/kavu/go_reuseport v1.5.0
 	github.com/lucas-clemente/quic-go v0.17.1
