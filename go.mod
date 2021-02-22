@@ -15,6 +15,7 @@ require (
 	github.com/asim/go-micro/v3 v3.2.0
 	github.com/asim/protoc-gen-go-micro/v3 v3.0.0
 	github.com/blend/go-sdk v0.0.0-20201210155311-fbbfabf18805 // indirect
+	github.com/bojand/ghz v0.92.0
 	github.com/briandowns/spinner v1.12.0
 	github.com/c-bata/go-prompt v0.2.5
 	github.com/chrusty/protoc-gen-jsonschema v0.0.0-20200925202108-800eac78ab6f
@@ -86,7 +87,7 @@ require (
 	github.com/rs/xid v1.2.1
 	github.com/sciter-sdk/go-sciter v0.5.0
 	github.com/sipin/gorazor v1.2.2
-	github.com/sirupsen/logrus v1.4.2
+	github.com/sirupsen/logrus v1.6.0
 	github.com/skratchdot/open-golang v0.0.0-20160302144031-75fb7ed4208c
 	github.com/spf13/afero v1.4.1 // indirect
 	github.com/spf13/cast v1.3.1 // indirect

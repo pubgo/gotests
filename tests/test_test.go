@@ -33,3 +33,7 @@ func (*s1) Hello() {
 func init1(s ss) {
 
 }
+
+func TestName11(t *testing.T) {
+	fmt.Printf("%v",0.003)
+}
