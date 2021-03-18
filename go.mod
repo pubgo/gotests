@@ -55,9 +55,11 @@ require (
 	github.com/hajimehoshi/oto v0.6.3
 	github.com/hashicorp/memberlist v0.1.3
 	github.com/iancoleman/orderedmap v0.1.0
+	github.com/imdario/mergo v0.3.9
 	github.com/jedib0t/go-pretty/v6 v6.1.0
 	github.com/jhump/protoreflect v1.8.1
 	github.com/kavu/go_reuseport v1.5.0
+	github.com/libp2p/go-reuseport v0.0.2
 	github.com/lucas-clemente/quic-go v0.17.1
 	github.com/lxn/walk v0.0.0-20191113135339-bf589de20b3c
 	github.com/magiconair/properties v1.8.4 // indirect
