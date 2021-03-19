@@ -83,6 +83,7 @@ require (
 	github.com/pubgo/xprocess v0.1.2
 	github.com/pubgo/xprotogen v0.0.2
 	github.com/radovskyb/watcher v1.0.7
+	github.com/reactivex/rxgo/v2 v2.4.0
 	github.com/robotn/gohook v0.30.3
 	github.com/rocketlaunchr/react v1.0.9
 	github.com/rs/jplot v1.1.1
