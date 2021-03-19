@@ -108,14 +108,15 @@ require (
 	github.com/yomorun/yomo v0.1.14
 	go.mongodb.org/mongo-driver v1.1.2
 	go.uber.org/atomic v1.7.0
+	go.uber.org/goleak v1.1.10
 	gocv.io/x/gocv v0.24.0
 	golang.org/x/crypto v0.0.0-20201203163018-be400aefbc4c
-	golang.org/x/image v0.0.0-20200801110659-972c09e46d76
+	golang.org/x/image v0.0.0-20210216034530-4410531fe030
 	golang.org/x/net v0.0.0-20201202161906-c7110b5ffcbb
 	golang.org/x/oauth2 v0.0.0-20201203001011-0b49973bad19
-	golang.org/x/sys v0.0.0-20201130072748-111129e158e2
-	golang.org/x/text v0.3.4 // indirect
+	golang.org/x/sys v0.0.0-20210304124612-50617c2ba197
 	golang.org/x/tools v0.0.0-20201204162204-73cf035baebf
+	gonum.org/v1/plot v0.9.0
 	google.golang.org/genproto v0.0.0-20201019141844-1ed22bb0c154
 	google.golang.org/grpc v1.34.0
 	google.golang.org/protobuf v1.25.1-0.20200805231151-a709e31e5d12
