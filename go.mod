@@ -54,8 +54,11 @@ require (
 	github.com/hajimehoshi/go-mp3 v0.3.1
 	github.com/hajimehoshi/oto v0.6.3
 	github.com/hashicorp/memberlist v0.1.3
+	github.com/hashicorp/raft v1.2.0
+	github.com/hashicorp/raft-boltdb v0.0.0-20191021154308-4207f1bf0617
 	github.com/iancoleman/orderedmap v0.1.0
-	github.com/imdario/mergo v0.3.9
+	github.com/imdario/mergo v0.3.12
+	github.com/jackpal/gateway v1.0.7
 	github.com/jedib0t/go-pretty/v6 v6.1.0
 	github.com/jhump/protoreflect v1.8.1
 	github.com/kavu/go_reuseport v1.5.0
@@ -76,21 +79,21 @@ require (
 	github.com/panjf2000/gnet v1.3.2
 	github.com/pborman/uuid v1.2.0
 	github.com/pelletier/go-toml v1.8.1 // indirect
-	github.com/pkg/term v1.1.0 // indirect
 	github.com/pubgo/g v0.2.52
-	github.com/pubgo/x v0.2.56
-	github.com/pubgo/xerror v0.3.14
-	github.com/pubgo/xprocess v0.1.2
+	github.com/pubgo/x v0.3.21 // indirect
+	github.com/pubgo/xerror v0.4.4
+	github.com/pubgo/xprocess v0.1.2 // indirect
 	github.com/pubgo/xprotogen v0.0.2
 	github.com/radovskyb/watcher v1.0.7
 	github.com/reactivex/rxgo/v2 v2.4.0
 	github.com/robotn/gohook v0.30.3
 	github.com/rocketlaunchr/react v1.0.9
+	github.com/rqlite/rqlite v4.6.0+incompatible
 	github.com/rs/jplot v1.1.1
 	github.com/rs/xid v1.2.1
 	github.com/sciter-sdk/go-sciter v0.5.0
 	github.com/sipin/gorazor v1.2.2
-	github.com/sirupsen/logrus v1.6.0
+	github.com/sirupsen/logrus v1.7.0
 	github.com/skratchdot/open-golang v0.0.0-20160302144031-75fb7ed4208c
 	github.com/spf13/afero v1.4.1 // indirect
 	github.com/spf13/cast v1.3.1 // indirect

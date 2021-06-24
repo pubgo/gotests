@@ -26,7 +26,7 @@ var trim = strings.TrimSpace
 var titleReg = regexp.MustCompile(`.*#(.+)`)
 
 func TestTypora(t *testing.T) {
-	defer xerror.Assert()
+	defer xerror.RespExit()
 
 	xerror.Panic(filepath.Walk(os.ExpandEnv("$GOPATH/src/mydocs/typora"),
 		func(path string, info os.FileInfo, err1 error) (err error) {
